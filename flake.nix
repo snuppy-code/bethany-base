@@ -57,7 +57,7 @@
         nvf.nixosModules.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
-        nix-flatpak
+        nix-flatpak.nixosModules.nix-flatpak
         ./modules/sops.nix
         ./modules/base-hardware.nix
         ./modules/gnome.nix
