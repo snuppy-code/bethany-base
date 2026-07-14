@@ -22,5 +22,6 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.appindicator
     gnomeExtensions.power-off-options
+    gnomeExtensions.papirus-folders-colorizer
   ];
 }

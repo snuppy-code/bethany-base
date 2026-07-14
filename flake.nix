@@ -89,6 +89,7 @@
               ./hosts/snp-lap1nix/modules-hm/snuppy.nix
               ./modules-hm/home-manager.nix
               ./modules-hm/gnome.nix
+              ./modules-hm/icons.nix
               ./modules-hm/virtualization.nix
             ];
           };
