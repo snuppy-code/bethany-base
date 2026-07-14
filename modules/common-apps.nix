@@ -43,7 +43,6 @@
       freecad
 
       protonplus
-      modrinth-app
       (prismlauncher.override {
         jdks = [
           jdk8
