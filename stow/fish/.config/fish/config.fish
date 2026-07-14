@@ -29,4 +29,7 @@ if status is-interactive
         cat /etc/nixos/bethany-base/assets/nixlogo/unicode/yellow-magenta
     end
     echo ""
+
+    abbr --add sto "stow -d ~/Projects/nix/bethany-base/stow -t ~ -S zed fish ssh"
+    abbr --add nos nh os switch
 end

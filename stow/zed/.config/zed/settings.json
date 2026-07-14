@@ -92,9 +92,9 @@
                 // "theme": "Rosé Pine Moon",
 
                 // more nice dark:
-                "theme": "Everforest Dark Soft (material)",
+                // "theme": "Everforest Dark Soft (material)",
                 // "theme": "Smooth Dark",
-                // "theme": "Catppuccin Frappé",
+                "theme": "Catppuccin Frappé",
 
                 // descending order of preference, ascending order of contrast
                 // "theme": "Everforest Light Hard (material)",
