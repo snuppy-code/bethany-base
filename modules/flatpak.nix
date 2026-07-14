@@ -7,4 +7,5 @@
   services.flatpak.enable = true;
 
   # todo add common apps here
+  # todo that includes modrinth
 }

@@ -43,6 +43,7 @@
       freecad
 
       protonplus
+
       (prismlauncher.override {
         jdks = [
           jdk8
