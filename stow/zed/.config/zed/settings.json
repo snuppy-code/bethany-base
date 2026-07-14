@@ -1,0 +1,457 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "auto_update": false,
+
+    "base_keymap": "VSCode",
+    "middle_click_paste": false,
+    "auto_indent_on_paste": false,
+    "auto_indent": "none",
+    "cli_default_open_behavior": "new_window",
+
+    "project_panel": {
+        "dock": "left",
+    },
+    "outline_panel": {
+        "dock": "left",
+    },
+    "collaboration_panel": {
+        "dock": "left",
+    },
+    "git_panel": {
+        "dock": "left",
+        "tree_view": true,
+    },
+    "agent": {
+        "dock": "right",
+    },
+
+    "edit_predictions": {
+        "provider": "none",
+        "allow_data_collection": "no",
+    },
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry",
+        },
+    },
+
+    "lsp": {
+        "nil": {
+            "initialization_options": {
+                "formatting": {
+                    "command": ["alejandra", "--quiet", "--"],
+                },
+            },
+        },
+        "nu": {
+            "initialization_options": {
+                "formatting": {
+                    "command": ["nufmt", "--"],
+                },
+            },
+        },
+    },
+    "tab_size": 4,
+    "languages": {
+        "Fish": {
+            "formatter": {
+                "external": {
+                    "command": "fish_indent",
+                },
+            },
+        },
+        "Nix": {
+            "tab_size": 2,
+        },
+    },
+
+    "profiles": {
+        "lap1nix": {
+            "base": "user",
+            "settings": {
+                "minimap": {
+                    "show": "auto",
+                    "thumb": "always",
+                    "current_line_highlight": null,
+                },
+
+                // less nice dark:
+                // "theme": "Nordfox - opaque",
+                // "theme": "Kanagawa Wave",
+                // "theme": "Duskfox - opaque",
+                // "theme": "Gruvbox Dark",
+                // "theme": "Zedokai (Filter Octagon)",
+                // "theme": "Nord Dark",
+                // "theme": "Rosé Pine Moon",
+
+                // more nice dark:
+                "theme": "Everforest Dark Soft (material)",
+                // "theme": "Smooth Dark",
+                // "theme": "Catppuccin Frappé",
+
+                // descending order of preference, ascending order of contrast
+                // "theme": "Everforest Light Hard (material)",
+                // "theme": "Catppuccin Latte",
+                // "theme": "HBuilderX Push Light",
+                // "theme": "HBuilderX Push Light Plus",
+                // "theme": "Github Plus Light",
+                // "theme": "GitHub Light",
+
+                "icon_theme": "Base Charmed Icons",
+
+                "title_bar": {
+                    "show_branch_status_icon": false,
+                    "show_branch_name": true,
+                    "show_project_items": false,
+                    "show_onboarding_banner": false,
+                    "show_user_picture": true,
+                    "show_user_menu": true,
+                    "show_sign_in": true,
+                    "show_menus": false,
+                    "button_layout": "minimize,close",
+                },
+                "tab_bar": {
+                    "show": true,
+                },
+                "toolbar": {
+                    "breadcrumbs": true,
+                    "quick_actions": false,
+                },
+                "status_bar": {
+                    "experimental.show": true,
+                },
+                "project_panel": {
+                    "button": false,
+                    "default_width": 230,
+                    "git_status": true,
+                    "indent_size": 24,
+                    "auto_reveal_entries": true,
+                    "auto_fold_dirs": true,
+                    "bold_folder_labels": true,
+                    "scrollbar": {
+                        "show": "never",
+                    },
+                },
+                "scrollbar": {
+                    "show": "auto",
+                },
+                "gutter": {
+                    "line_numbers": true,
+                    "runnables": false,
+                    "breakpoints": true,
+                    "folds": true,
+                    "min_line_number_digits": 4,
+                },
+                "indent_guides": {
+                    "enabled": true,
+                    "line_width": 1,
+                    "active_line_width": 2,
+                    "coloring": "indent_aware",
+                    // "background_coloring": "indent_aware",
+                },
+                "buffer_font_family": "0xProto Nerd Font",
+                "ui_font_family": "0xProto Nerd Font",
+                "terminal": {
+                    "font_size": 11,
+                    "font_family": "0xProto Nerd Font",
+                    "font_fallbacks": ["Noto Sans Symbols 2"],
+                },
+                "ui_font_size": 13,
+                "buffer_font_size": 11,
+                "buffer_line_height": {
+                    "custom": 1.3,
+                },
+                "inline_code_actions": false,
+                "selection_highlight": true, // don't highlight other occurrences
+                "drag_and_drop_selection": {
+                    "enabled": false,
+                },
+                // "horizontal_scroll_margin": 15,
+                // "vertical_scroll_margin": 18,
+                "horizontal_scroll_margin": 1,
+                "vertical_scroll_margin": 1,
+                "when_closing_with_no_tabs": "keep_window_open",
+                "close_on_file_delete": true,
+                "git": {
+                    "git_gutter": "tracked_files",
+                    "inline_blame": {
+                        "enabled": true,
+                    },
+                },
+
+                "disable_ai": true,
+                "show_completions_on_input": true,
+            },
+        },
+        "des1nix": {
+            "base": "user",
+            "settings": {
+                "minimap": {
+                    "show": "never",
+                    "thumb": "always",
+                    "current_line_highlight": null,
+                },
+
+                // less nice dark:
+                // "theme": "Nordfox - opaque",
+                "theme": "Kanagawa Wave",
+                // "theme": "Duskfox - opaque",
+                // "theme": "Gruvbox Dark",
+                // "theme": "Zedokai (Filter Octagon)",
+                // "theme": "Nord Dark",
+                // "theme": "Rosé Pine Moon",
+
+                // more nice dark:
+                // "theme": "Everforest Dark Soft (material)",
+                // "theme": "Smooth Dark",
+                // "theme": "Catppuccin Frappé",
+
+                // descending order of preference, ascending order of contrast
+                // "theme": "Everforest Light Hard (material)",
+                // "theme": "Catppuccin Latte",
+                // "theme": "HBuilderX Push Light",
+                // "theme": "HBuilderX Push Light Plus",
+                // "theme": "Github Plus Light",
+                // "theme": "GitHub Light",
+
+                "icon_theme": "Base Charmed Icons",
+
+                "title_bar": {
+                    "show_branch_status_icon": false,
+                    "show_branch_name": true,
+                    "show_project_items": false,
+                    "show_onboarding_banner": false,
+                    "show_user_picture": true,
+                    "show_user_menu": true,
+                    "show_sign_in": true,
+                    "show_menus": false,
+                    "button_layout": "minimize,close",
+                },
+                "tab_bar": {
+                    "show": true,
+                },
+                "toolbar": {
+                    "breadcrumbs": true,
+                    "quick_actions": false,
+                },
+                "status_bar": {
+                    "experimental.show": true,
+                },
+                "project_panel": {
+                    "button": false,
+                    "default_width": 310,
+                    "git_status": true,
+                    "indent_size": 14,
+                    "auto_reveal_entries": true,
+                    "auto_fold_dirs": true,
+                    "bold_folder_labels": true,
+                    "scrollbar": {
+                        "show": "never",
+                    },
+                },
+                "scrollbar": {
+                    "show": "auto",
+                },
+                "gutter": {
+                    "line_numbers": true,
+                    "runnables": false,
+                    "breakpoints": true,
+                    "folds": false,
+                    "min_line_number_digits": 4,
+                },
+                "indent_guides": {
+                    "enabled": true,
+                    "line_width": 2,
+                    "active_line_width": 3,
+                    "coloring": "indent_aware",
+                    // "background_coloring": "indent_aware",
+                },
+                "buffer_font_family": "0xProto Nerd Font",
+                "ui_font_family": "0xProto Nerd Font",
+                "terminal": {
+                    "font_size": 13,
+                    "font_family": "0xProto Nerd Font",
+                    "font_fallbacks": ["Noto Sans Symbols 2"],
+                },
+                "ui_font_size": 16,
+                "buffer_font_size": 15,
+                "buffer_line_height": {
+                    "custom": 1.43,
+                },
+                "inline_code_actions": false,
+                "selection_highlight": true, // don't highlight other occurrences
+                "drag_and_drop_selection": {
+                    "enabled": false,
+                },
+                // "horizontal_scroll_margin": 15,
+                // "vertical_scroll_margin": 18,
+                "horizontal_scroll_margin": 1,
+                "vertical_scroll_margin": 1,
+                "when_closing_with_no_tabs": "keep_window_open",
+                "close_on_file_delete": true,
+                "git": {
+                    "git_gutter": "tracked_files",
+                    "inline_blame": {
+                        "enabled": true,
+                    },
+                },
+
+                "disable_ai": true,
+                "show_completions_on_input": true,
+            },
+        },
+
+        "present": {
+            "base": "user",
+            "settings": {
+                // less nice dark:
+                // "theme": "Nordfox - opaque",
+                // "theme": "Kanagawa Wave",
+                // "theme": "Duskfox - opaque",
+                // "theme": "Gruvbox Dark",
+                // "theme": "Zedokai (Filter Octagon)",
+                // "theme": "Nord Dark",
+                // "theme": "Rosé Pine Moon",
+
+                // more nice dark:
+                // "theme": "Everforest Dark Soft (material)",
+                // "theme": "Smooth Dark",
+                // "theme": "Catppuccin Frappé",
+
+                // descending order of preference, ascending order of contrast
+                "theme": "Everforest Light Hard (material)",
+                // "theme": "Catppuccin Latte",
+                // "theme": "HBuilderX Push Light",
+                // "theme": "HBuilderX Push Light Plus",
+                // "theme": "Github Plus Light",
+                // "theme": "GitHub Light",
+
+                "theme_overrides": {
+                    "Everforest Light Hard (material)": {
+                        "accents": [
+                            "#f85552",
+                            "#f57d26",
+                            "#dfa000",
+                            "#8da101",
+                            "#35a77c",
+                            "#3a94c5",
+                            "#df69ba",
+                        ],
+                        "background": "#FFFEFAFF",
+                        "editor.active_line.background": "#F5F5E4FF",
+                        "editor.background": "#FFFDF7FF",
+                        "editor.gutter.background": "#FFFDF7FF",
+                        "editor.highlighted_line.background": "#F8F5E4FF",
+                        "editor.indent_guide": "#F2EFDFFF",
+                        "element.background": "#FFFEFAFF",
+                        "elevated_surface.background": "#FFFDF5FF",
+                        "error": "#C20400FF",
+                        "panel.background": "#FFFDF5FF",
+                        "panel.indent_guide": "#F2EFDFFF",
+                        "status_bar.background": "#FFFEFAFF",
+                        "surface.background": "#FFFDF5FF",
+                        "tab_bar.background": "#FFFDF5FF",
+                        "tab.inactive_background": "#FFFDF5FF",
+                        "terminal.background": "#FFFDF7FF",
+                        "title_bar.background": "#FFFEFAFF",
+                        "toolbar.background": "#FFFDF7FF",
+                        "warning": "#C4BA00FF",
+                        "panel.overlay_background": "#FFFDF5FF",
+                        "panel.overlay_hover": "#FFFEFAFF",
+                    },
+                },
+
+                "icon_theme": "Soft Charmed Icons",
+
+                "title_bar": {
+                    "show_branch_status_icon": false,
+                    "show_branch_name": false,
+                    "show_project_items": false,
+                    "show_onboarding_banner": false,
+                    "show_user_picture": true,
+                    "show_user_menu": true,
+                    "show_sign_in": true,
+                    "show_menus": false,
+                    "button_layout": "",
+                },
+                "tab_bar": {
+                    // "show": false,
+                },
+                "toolbar": {
+                    "breadcrumbs": true,
+                    "quick_actions": false,
+                },
+                "status_bar": {
+                    "experimental.show": false,
+                },
+                "project_panel": {
+                    "button": false, // shows up in status bar, not needed cuz experimental.show: false, but I might remove that, and then I don't want the button
+                    "default_width": 310,
+                    "git_status": false,
+                    "indent_size": 23,
+                    "auto_reveal_entries": true,
+                    "auto_fold_dirs": false,
+                    "bold_folder_labels": true,
+                    "scrollbar": {
+                        "show": "never",
+                    },
+                },
+                "minimap": {
+                    "show": "never",
+                },
+                "scrollbar": {
+                    "show": "never",
+                },
+                "gutter": {
+                    "line_numbers": true,
+                    "runnables": false,
+                    "breakpoints": false,
+                    "folds": false,
+                    "min_line_number_digits": 4,
+                },
+                "indent_guides": {
+                    "enabled": true,
+                    "line_width": 2,
+                    "active_line_width": 3,
+                    // "coloring": "indent_aware",
+                    // "background_coloring": "indent_aware",
+                },
+                "buffer_font_family": "0xProto Nerd Font",
+                // "ui_font_family": "0xProto Nerd Font",
+                "terminal": {
+                    "font_size": 17,
+                },
+                "ui_font_size": 24,
+                "buffer_font_size": 21,
+                "buffer_line_height": {
+                    "custom": 1.5,
+                },
+                "inline_code_actions": false,
+                "selection_highlight": false, // don't highlight other occurrences
+                "drag_and_drop_selection": {
+                    "enabled": false,
+                },
+                "horizontal_scroll_margin": 15,
+                "vertical_scroll_margin": 8,
+                "when_closing_with_no_tabs": "keep_window_open",
+                "close_on_file_delete": true,
+                "git": {
+                    "git_gutter": "hide",
+                    "inline_blame": {
+                        "enabled": false,
+                    },
+                },
+
+                "disable_ai": true,
+                "show_completions_on_input": false,
+            },
+        },
+    },
+}
