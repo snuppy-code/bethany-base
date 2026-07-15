@@ -30,7 +30,7 @@ if status is-interactive
     end
     echo ""
 
-    abbr --add sto "stow -d /etc/nixos/bethany-base/stow -t ~ -S zed fish ssh"
+    abbr --add sto "stow -d /etc/nixos/bethany-base/stow -t ~ -S zed fish ssh kitty"
     abbr --add nval "nix-instantiate --eval"
     abbr --add nvals "nix-instantiate --eval --strict"
     abbr --add nos nh os switch
