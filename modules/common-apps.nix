@@ -21,6 +21,7 @@
         withVencord = true;
       })
       gajim
+      signal-desktop
       typst
       proton-vpn
       normcap
