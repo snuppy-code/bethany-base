@@ -14,14 +14,18 @@
   # conflicts with it so disable
   services.gnome.gcr-ssh-agent.enable = false;
 
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.tiling-shell
-    gnomeExtensions.emoji-copy
-    gnomeExtensions.gsconnect
-    gnomeExtensions.caffeine
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.appindicator
-    gnomeExtensions.power-off-options
-    gnomeExtensions.papirus-folders-colorizer
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    tiling-shell
+    emoji-copy
+    gsconnect
+    caffeine
+    clipboard-indicator
+    appindicator
+    power-off-options
+    papirus-folders-colorizer
+    blur-my-shell
+    dash-to-dock
+    burn-my-windows
+    rounded-window-corners-reborn
   ];
 }
