@@ -17,7 +17,7 @@
     cue_prompt = "${esc}[1;35mVerify presence: Bloodtype ORANGE${esc}[0m";
     auth_key_file = "/etc/ssh/authorized_keys.d/$ruser";
   };
-  programs.yubikey-touch-detector.enable = true;
-  programs.yubikey-touch-detector.libnotify = false;
+  # programs.yubikey-touch-detector.enable = true;
+  # programs.yubikey-touch-detector.libnotify = false;
   # todo write an application or script that has a cool themed notification
 }
