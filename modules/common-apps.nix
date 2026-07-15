@@ -40,7 +40,7 @@
       blender
       obs-studio
       audacity
-      freecad
+      # freecad
 
       protonplus
 

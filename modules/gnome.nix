@@ -27,5 +27,6 @@
     dash-to-dock
     burn-my-windows
     rounded-window-corners-reborn
+    coverflow-alt-tab
   ];
 }
