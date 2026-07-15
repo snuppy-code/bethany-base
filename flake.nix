@@ -45,14 +45,14 @@
     nix-citizen,
     finnjobtool,
   } @ inputs: {
-    nixosConfigurations.snp-lap1nix = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.lilin = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
       };
       modules = [
-        ./hosts/snp-lap1nix/modules/hardware-configuration.nix
-        ./hosts/snp-lap1nix/modules/hardware-myextra.nix
-        ./hosts/snp-lap1nix/modules/throttle.nix
+        ./hosts/lilin/modules/hardware-configuration.nix
+        ./hosts/lilin/modules/hardware-myextra.nix
+        ./hosts/lilin/modules/throttle.nix
         sops-nix.nixosModules.sops
         nvf.nixosModules.default
         stylix.nixosModules.stylix
@@ -86,7 +86,7 @@
           home-manager.users.snuppy = {
             imports = [
               inputs.sops-nix.homeManagerModule
-              ./hosts/snp-lap1nix/modules-hm/snuppy.nix
+              ./hosts/lilin/modules-hm/snuppy.nix
               ./modules-hm/home-manager.nix
               ./modules-hm/gnome.nix
               ./modules-hm/icons.nix
