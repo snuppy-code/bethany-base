@@ -51,7 +51,8 @@
       };
       modules = [
         ./hosts/lilin/modules/hardware-configuration.nix
-        ./hosts/lilin/modules/hardware-myextra.nix
+        ./hosts/lilin/modules/os.nix
+        ./hosts/lilin/modules/gpu.nix
         ./hosts/lilin/modules/throttle.nix
         sops-nix.nixosModules.sops
         nvf.nixosModules.default
@@ -87,6 +88,59 @@
             imports = [
               inputs.sops-nix.homeManagerModule
               ./hosts/lilin/modules-hm/snuppy.nix
+              ./modules-hm/home-manager.nix
+              ./modules-hm/gnome.nix
+              ./modules-hm/stylix.nix
+              ./modules-hm/virtualization.nix
+            ];
+          };
+        }
+      ];
+    };
+    nixosConfigurations.tabris = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./hosts/tabris/modules/hardware-configuration.nix
+        ./hosts/tabris/modules/os.nix
+        ./hosts/tabris/modules/gpu.nix
+        ./hosts/tabris/modules/cuda.nix
+        ./hosts/tabris/modules/gaming-cache.nix
+        sops-nix.nixosModules.sops
+        nvf.nixosModules.default
+        stylix.nixosModules.stylix
+        home-manager.nixosModules.home-manager
+        nix-flatpak.nixosModules.nix-flatpak
+        ./modules/sops.nix
+        ./modules/base-hardware.nix
+        ./modules/gnome.nix
+        ./modules/virtualization.nix
+        ./modules/regional.nix
+        ./modules/audio.nix
+        ./modules/security.nix
+        ./modules/exposed.nix
+        ./modules/nix.nix
+        ./modules/users.nix
+        ./modules/cli.nix
+        ./modules/nvf.nix
+        ./modules/common-apps.nix
+        ./modules/thunar.nix
+        ./modules/steam.nix
+        ./modules/ld.nix
+        ./modules/flatpak.nix
+        ./modules/git-systemwide.nix
+        ./modules/kde-connect.nix
+        ./modules/syncthing.nix
+        ./modules/fonts.nix
+        ./modules/ssh.nix
+        ./modules/stylix.nix
+        ./modules/home-manager.nix
+        {
+          home-manager.users.snuppy = {
+            imports = [
+              inputs.sops-nix.homeManagerModule
+              ./hosts/tabris/modules-hm/snuppy.nix
               ./modules-hm/home-manager.nix
               ./modules-hm/gnome.nix
               ./modules-hm/stylix.nix

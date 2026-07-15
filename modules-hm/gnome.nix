@@ -3,7 +3,10 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+in {
+  # dconf list /org/gnome/shell/extensions/
+  # dconf dump /org/gnome/shell/extensions/
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-up = [];

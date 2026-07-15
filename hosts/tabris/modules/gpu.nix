@@ -1,0 +1,32 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  services.xserver.videoDrivers = ["nvidia"]; # installs nvidia drivers to the system. incl. OpenCL and CUDA
+  hardware.nvidia = {
+    modesetting.enable = true; # KMS, needed for wayland
+    open = true; # use open source kernel module instead of noveau
+    package = config.boot.kernelPackages.nvidiaPackages.stable; # {production,stable,beta} as of writing
+
+    powerManagement.finegrained = false;
+    nvidiaSettings = true; # official gui with info & settings
+
+    powerManagement.enable = true; # can fix resume-from-suspend issues
+  };
+  powerManagement.enable = true; # can fix resume-from-suspend issues
+  # mesa includes OpenGL, Vulkan drivers, and hardware video acceleration
+  hardware.graphics = {
+    enable = true; # installs the appropriate mesa driver, most DEs set this already apparently
+  };
+  boot.initrd.kernelModules = [
+    # The set of kernel modules in the initial ramdisk used during the boot process
+    # good for less flickering of plymouth, bad otherwise?
+    # Arch wiki says this will break hibernation, "as video memory preservation is enabled by default."
+    "nvidia"
+    "nvidia_modeset"
+    "nvidia_uvm"
+    "nvidia_drm"
+  ];
+}

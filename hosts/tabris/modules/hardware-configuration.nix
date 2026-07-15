@@ -9,29 +9,28 @@
   ...
 }: {
   imports = [
-    (modulesPath + "/hardware/cpu/intel-npu.nix")
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "sdhci_pci"];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
+  boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/4e17ec64-193e-46bb-8597-1d28ec2ba0d0";
+    device = "/dev/disk/by-uuid/16849257-400c-46c5-aea3-9d4dc1496e46";
     fsType = "ext4";
   };
-
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D984-181E";
+    device = "/dev/disk/by-uuid/2975-DDCC";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/7d5d7990-a579-4698-a355-ef858fbf4798";}
+    {device = "/dev/disk/by-uuid/a3cc36e7-ca45-4b5a-bc67-cecdc57af1ea";}
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware.cpu.amd.updateMicrocode = true;
 }
