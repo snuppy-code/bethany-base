@@ -6,7 +6,10 @@
 }: {
   environment.systemPackages = with pkgs;
     [
-      inputs.helium.packages.${pkgs.system}.default
+      lazygit
+
+      readest
+      cozy
       kitty
       prusa-slicer
       yubioath-flutter
@@ -21,7 +24,7 @@
         withVencord = true;
       })
       gajim
-      signal-desktop
+      element-desktop
       typst
       proton-vpn
       normcap
@@ -34,8 +37,8 @@
       vlc
       mpv
       ffmpeg
-      # easyeffects
-      # pavucontrol
+      easyeffects
+      pavucontrol
       krita
       aseprite
       blender
@@ -64,6 +67,7 @@
       zed-editor
     ]
     ++ [
+      inputs.helium.packages.${pkgs.system}.default
       inputs.finnjobtool.packages.${pkgs.system}.default
       inputs.finnjobtool.packages.${pkgs.system}.cli
     ];

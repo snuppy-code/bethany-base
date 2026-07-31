@@ -44,7 +44,11 @@
     nix-gaming,
     nix-citizen,
     finnjobtool,
-  } @ inputs: {
+  } @ inputs: let
+    nya = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages."${nya}";
+  in {
     nixosConfigurations.lilin = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;

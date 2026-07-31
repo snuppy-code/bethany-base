@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "ssh_connections": [
+        {
+            "host": "zeruel",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/etc/nixos/terminal-dogma"
+                    ]
+                }
+            ]
+        }
+    ],
     "auto_update": false,
 
     "base_keymap": "VSCode",
