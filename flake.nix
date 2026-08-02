@@ -22,11 +22,6 @@
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-gaming.url = "github:fufexan/nix-gaming";
-
-    nix-citizen.url = "github:LovingMelody/nix-citizen";
-    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
-
     finnjobtool.url = "git+ssh://git@github.com/snuppy-code/finnjobbtool?ref=sidelined-work";
     finnjobtool.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -41,8 +36,6 @@
     sops-nix,
     stylix,
     helium,
-    nix-gaming,
-    nix-citizen,
     finnjobtool,
   } @ inputs: let
     nya = "x86_64-linux";
@@ -110,7 +103,6 @@
         ./hosts/tabris/modules/os.nix
         ./hosts/tabris/modules/gpu.nix
         ./hosts/tabris/modules/cuda.nix
-        ./hosts/tabris/modules/gaming-cache.nix
         sops-nix.nixosModules.sops
         nvf.nixosModules.default
         stylix.nixosModules.stylix
