@@ -16,6 +16,22 @@
                     "paths": [
                         "/etc/nixos/terminal-dogma"
                     ]
+                },
+                {
+                    "paths": [
+                        "/home/snuppy/Projects"
+                    ]
+                }
+            ]
+        },
+        {
+            "host": "lilin",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/home/snuppy/Projects/nix/terminal-dogma/./"
+                    ]
                 }
             ]
         }
