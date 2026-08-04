@@ -46,13 +46,13 @@
         # don't create this entry if we are this device
         "lilin" = lib.mkIf (config.networking.hostName != "lilin") {
           autoAcceptFolders = false;
-          id = "DSN4CJM-5BYN5A5-TRVYT34-OVKZRMR-AXVYMCI-OXEUS4D-Q7C5E7A-B356OA7";
+          id = "OVGAC56-JAINDBQ-22XQHV3-JZKGERO-BDWNAYJ-P2EBMJN-AHJTUDT-5D54DQK";
           name = "lilin";
         };
         # don't create this entry if we are this device
         "tabris" = lib.mkIf (config.networking.hostName != "tabris") {
           autoAcceptFolders = false;
-          id = "FGMRMX3-P5XAGRD-J6UNZ63-ESNAMMD-6RZBRA3-EWPVTPR-SC3TYCF-GKJ5TA3";
+          id = "RCNYKWR-ANNRYMQ-5AEAQTM-VJX327K-HV5N353-HOSCL6P-WSGO7KM-FV4OQA5";
           name = "tabris";
         };
         "eligius" = {
