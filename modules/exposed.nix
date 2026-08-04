@@ -5,9 +5,11 @@
 }: {
   # --- server ----
   services.tailscale.enable = true;
-  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
-    22 # ssh
-  ];
+  networking.firewall = {
+    interfaces.tailscale0.allowedTCPPorts = [
+      22 # ssh
+    ];
+  };
   services.openssh = {
     enable = true;
     openFirewall = false;
