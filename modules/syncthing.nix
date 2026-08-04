@@ -32,7 +32,7 @@
     group = "petrova";
     configDir = "/var/lib/syncthing";
     dataDir = "/var/lib/syncthing";
-    guiAddress = "100.73.209.34:8384";
+    guiAddress = "tabris.tailf46592.ts.net:8384";
     overrideDevices = true;
     overrideFolders = true;
     guiPasswordFile = config.sops.secrets.syncthing-password.path;
@@ -41,11 +41,13 @@
         user = "petrova";
       };
       devices = {
+        # don't create this entry if we are this device
         "lilin" = lib.mkIf (config.networking.hostName != "lilin") {
           autoAcceptFolders = false;
           id = "DSN4CJM-5BYN5A5-TRVYT34-OVKZRMR-AXVYMCI-OXEUS4D-Q7C5E7A-B356OA7";
           name = "lilin";
         };
+        # don't create this entry if we are this device
         "tabris" = lib.mkIf (config.networking.hostName != "tabris") {
           autoAcceptFolders = false;
           id = "FGMRMX3-P5XAGRD-J6UNZ63-ESNAMMD-6RZBRA3-EWPVTPR-SC3TYCF-GKJ5TA3";
@@ -64,7 +66,6 @@
       };
       folders = {
         "ryland" = {
-          # label = "Cognition Assessment";
           id = "zme6w-vsdht";
           path = "/home/snuppy/Documents/ryland";
           devices = [
@@ -73,10 +74,9 @@
           type = "sendreceive";
         };
         "astrophage-vial" = {
-          # label = "Come watch the petrovascope :D";
           id = "udavy-lwfcd";
           path = "/home/snuppy/astrophage-vial";
-          # remove tabris or lilin (?)?
+          # remove the hostname this is running on from this list so it doesn't reference one that doesn't exist
           devices = lib.lists.remove config.networking.hostName [
             "lilin"
             "tabris"
@@ -92,7 +92,7 @@
   };
   # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
   systemd.services.syncthing = {
-    after = ["systemd-tmpfiles-setup.service"]; # urrgh stupid stupid game
+    after = ["systemd-tmpfiles-setup.service"];
     serviceConfig = {
       ProtectHome = "tmpfs";
       BindPaths = [
