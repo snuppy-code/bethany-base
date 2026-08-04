@@ -74,6 +74,8 @@
         "ryland" = {
           id = "zme6w-vsdht";
           path = "/home/snuppy/Documents/ryland";
+          # PRETTY PLEASE
+          ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
             "workspace-mobile.json"
@@ -89,6 +91,7 @@
         "astrophage-vial" = {
           id = "udavy-lwfcd";
           path = "/home/snuppy/astrophage-vial";
+          ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
             "workspace-mobile.json"
