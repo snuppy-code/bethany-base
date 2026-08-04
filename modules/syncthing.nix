@@ -34,7 +34,11 @@
     configDir = "/var/lib/syncthing";
     dataDir = "/var/lib/syncthing";
     # tabris or lilin hopefully
-    guiAddress = "${config.networking.hostName}.tailf46592.ts.net:8384";
+    guiAddress =
+      {
+        lilin = "100.74.91.73:8384";
+        tabris = "100.73.209.34:8384";
+      }."${config.networking.hostName}" or "127.0.0.1:8384";
     overrideDevices = true;
     overrideFolders = true;
     guiPasswordFile = config.sops.secrets.syncthing-password.path;
