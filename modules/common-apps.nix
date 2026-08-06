@@ -29,6 +29,7 @@
       proton-vpn
       normcap
       anki
+      libreoffice-still # should be gtk
       obsidian
       nextcloud-client
       solaar
