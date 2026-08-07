@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs;
     [
       lazygit
+      packwiz
 
       readest
       cozy
