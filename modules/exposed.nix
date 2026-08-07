@@ -3,13 +3,9 @@
   inputs,
   ...
 }: {
-  # --- server ----
-  services.tailscale.enable = true;
-  networking.firewall = {
-    interfaces.tailscale0.allowedTCPPorts = [
-      22 # ssh
-    ];
-  };
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
+    22 # ssh on tailscale only
+  ];
   services.openssh = {
     enable = true;
     openFirewall = false;
@@ -21,5 +17,7 @@
       AllowUsers = ["snuppy"];
     };
   };
+
+  # todo replace with something dynamically changing
   users.motd = "God's in his heaven, all's right with the world."; # NGE reference !!!
 }
