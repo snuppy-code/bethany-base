@@ -73,7 +73,10 @@
         zig.enable = false;
         python.enable = true;
         typst.enable = true;
-        toml.enable = true;
+        toml = {
+          enable = true;
+          format.enable = false;
+        };
         # xml.enable = true;
         julia.enable = false;
         gleam.enable = false;
