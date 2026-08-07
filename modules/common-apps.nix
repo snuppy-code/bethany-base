@@ -8,6 +8,7 @@
     [
       lazygit
       packwiz
+      fresh-editor
 
       readest
       cozy

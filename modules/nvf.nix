@@ -47,7 +47,7 @@
         indent-blankline.enable = true;
       };
       languages = {
-        enableFormat = true;
+        enableFormat = false;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
         nix = {
