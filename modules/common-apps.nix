@@ -69,7 +69,5 @@
     ]
     ++ [
       inputs.helium.packages.${pkgs.system}.default
-      inputs.finnjobtool.packages.${pkgs.system}.default
-      inputs.finnjobtool.packages.${pkgs.system}.cli
     ];
 }

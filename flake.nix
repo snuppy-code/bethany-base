@@ -21,9 +21,6 @@
 
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
-
-    finnjobtool.url = "git+ssh://git@github.com/snuppy-code/finnjobbtool?ref=sidelined-work";
-    finnjobtool.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -36,7 +33,6 @@
     sops-nix,
     stylix,
     helium,
-    finnjobtool,
   } @ inputs: let
     nya = "x86_64-linux";
     lib = nixpkgs.lib;
