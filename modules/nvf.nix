@@ -15,7 +15,7 @@
       theme.enable = true;
       lsp = {
         enable = true;
-        formatOnSave = true;
+        formatOnSave = false;
         lightbulb.enable = true;
         trouble.enable = true;
       };
