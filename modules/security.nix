@@ -20,4 +20,6 @@
   # programs.yubikey-touch-detector.enable = true;
   # programs.yubikey-touch-detector.libnotify = false;
   # todo write an application or script that has a cool themed notification
+
+  services.pcscd.enable = true;
 }
