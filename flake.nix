@@ -19,6 +19,8 @@
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+    slon.url = "github:snuppy-code/slon";
+
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -32,6 +34,7 @@
     nix-flatpak,
     sops-nix,
     stylix,
+    slon,
     helium,
   } @ inputs: let
     nya = "x86_64-linux";
