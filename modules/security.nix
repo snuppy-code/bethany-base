@@ -5,7 +5,7 @@
   ...
 }: {
   security.sudo.extraConfig = "
-    Defaults timestamp_timeout=0.25 # 0.25m, i.e. 15s
+    Defaults timestamp_timeout=0.5 # 0.5m, i.e. 30s
   ";
 
   security.pam.services.sudo.rssh = true;
