@@ -47,7 +47,7 @@
         indent-blankline.enable = true;
       };
       languages = {
-        enableFormat = false;
+        enableFormat = true;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
         nix = {
@@ -75,7 +75,7 @@
         typst.enable = true;
         toml = {
           enable = true;
-          format.enable = false;
+          format.enable = true;
         };
         # xml.enable = true;
         julia.enable = false;
