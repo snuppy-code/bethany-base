@@ -13,28 +13,22 @@
             "args": [],
             "projects": [
                 {
-                    "paths": [
-                        "/etc/nixos/terminal-dogma"
-                    ]
+                    "paths": ["/etc/nixos/terminal-dogma"],
                 },
                 {
-                    "paths": [
-                        "/home/snuppy/Projects"
-                    ]
-                }
-            ]
+                    "paths": ["/home/snuppy/Projects"],
+                },
+            ],
         },
         {
             "host": "lilin",
             "args": [],
             "projects": [
                 {
-                    "paths": [
-                        "/home/snuppy/Projects/nix/terminal-dogma/./"
-                    ]
-                }
-            ]
-        }
+                    "paths": ["/home/snuppy/Projects/nix/terminal-dogma/./"],
+                },
+            ],
+        },
     ],
     "auto_update": false,
 
@@ -99,6 +93,10 @@
         "Nix": {
             "tab_size": 2,
         },
+    },
+
+    "inlay_hints": {
+        "enabled": true,
     },
 
     "profiles": {
