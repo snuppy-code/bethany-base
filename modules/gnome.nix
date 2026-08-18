@@ -17,7 +17,6 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     tiling-shell
     emoji-copy
-    gsconnect
     caffeine
     clipboard-indicator
     appindicator
