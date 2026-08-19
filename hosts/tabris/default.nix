@@ -25,7 +25,7 @@
     ../../modules/tailscale.nix
     ../../modules/minecraft.nix
     ../../modules/coolercontrol.nix
-    # ../../modules/syncthing.nix
+    ../../modules/syncthing.nix
     ../../modules/kde-connect.nix
     ../../modules/git-systemwide.nix
     ../../modules/nix.nix

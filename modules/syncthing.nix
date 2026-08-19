@@ -5,18 +5,34 @@
   lib,
   ...
 }: {
-  users.groups.petrova.gid = 2019;
+  # The syncthing perms and security is as follows:
+  # Synced folders go in /srv/, syncthing runs as petrova:petrova, and has access only
+  # to the few paths it needs. This does not include e.g. user homes. It has umask 007
+  # and so creates with rw-rw----, drwxrwx---.
+  # Nya's user has its own group (snuppy:snuppy), and is also in petrova group.
+  # petrova user is also in `snuppy` group.
+  # Nya's user has umask 007 and so creates with rw-rw----, drwxrwx---.
+
+  users.groups.petrova.gid = 2019; # year of petrova line discovery
+
+  users.users.petrova = {
+    isSystemUser = true;
+    description = "user for syncthing";
+    uid = 2019;
+    group = "petrova";
+    extraGroups = ["snuppy"]; # seems scary ! but systemd serviceConfig hides all but what it needs so it should be good ! (add other users to this list)
+  };
 
   sops.secrets.syncthing-password = {
-    owner = "snuppy";
-    group = "root";
+    owner = "petrova";
+    group = "petrova";
     mode = "400";
   };
 
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
-    user = "snuppy";
+    user = "petrova";
     group = "petrova";
     guiAddress =
       {
@@ -28,7 +44,7 @@
     guiPasswordFile = config.sops.secrets.syncthing-password.path;
     settings = {
       gui = {
-        user = "snuppy";
+        user = "petrova";
       };
       devices = {
         # don't create this entry if we are this device
@@ -58,7 +74,7 @@
         "sol" = {
           # personal files
           id = "nerjd-lbvyj";
-          path = "/home/snuppy/sol/";
+          path = "/srv/sol/";
           ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
@@ -75,7 +91,7 @@
         "eri" = {
           # shared with bunni
           id = "7uig4-rufph";
-          path = "/home/snuppy/eri/";
+          path = "/srv/eri/";
           ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
@@ -97,17 +113,15 @@
   };
   # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
   systemd.services.syncthing = {
-    after = ["systemd-tmpfiles-setup.service"];
     serviceConfig = {
-      ProtectHome = "tmpfs";
-      BindPaths = [
-        "/home/snuppy/sol/"
-        "/home/snuppy/eri/"
-      ];
+      ProtectHome = true;
       ProtectSystem = "strict";
       ReadWritePaths = [
         "/var/lib/syncthing"
+        "/srv/sol"
+        "/srv/eri"
       ];
+      UMask = "007";
     };
   };
 }
