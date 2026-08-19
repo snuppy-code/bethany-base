@@ -10,10 +10,10 @@
   sops.secrets.snuppy-password.neededForUsers = true;
   users.users.snuppy = {
     description = "colon three";
-    # group = "snuppy";
-    # uid = 2005;
+    group = "snuppy";
     isNormalUser = true;
     extraGroups = [
+      "users"
       "nerv-staff"
       "petrova"
       "wheel"

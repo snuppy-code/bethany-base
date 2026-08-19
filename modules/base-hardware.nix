@@ -12,4 +12,5 @@
   services.smartd.enable = true; # SMART Daemon
   services.fstrim.enable = true; # important !
   networking.networkmanager.enable = true;
+  boot.tmp.cleanOnBoot = true;
 }
