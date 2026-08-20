@@ -1,56 +1,90 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:aqua)\
-[ ](fg:fg0 bg:aqua)$character$username\
-[](fg:aqua bg:blue)\
+[](fg:seg1)\
+[ ](fg:fg0 bg:seg1)$character$username\
+[](fg:seg1 bg:seg2)\
 $directory\
-[](fg:blue bg:purple)\
-[ ](fg:fg0 bg:purple)($git_branch[ ](fg:fg0 bg:purple)$git_status)\
-[ ](fg:purple)\
+[](fg:seg2 bg:seg3)\
+[ ](fg:fg0 bg:seg3)($git_branch[ ](fg:fg0 bg:seg3)$git_status)\
+[ ](fg:seg3)\
 """
+#
 
-palette = 'nya'
+palette = 'volcanic_shale_deep'
 
-[palettes.nya]
-fg0 = '#fcf4ed'#'#E1E7DD'
-fg1 = '#d3c6aa'
-blue = '#7FBBB3'
-aqua = '#83C092'
-green = '#A7C080'
-purple = '#D699B6'
-red = '#E67E80'
-orange = '#E69875'
-yellow = '#DBBC7F'
+[palettes.volcanic_shale_surface] #  fish:"solarized"  kitty:"Everforest Light Hard"
+fg0  = '#ffffff'
+seg1 = '#7f879f'
+seg2 = '#8a7b8e'
+seg3 = '#b0929e'
+err  = '#74241f'
+root = '#b0736c'
+vim0 = '#543d08'
+vim1 = '#5c3269'
+vim2 = '#6b3413'
+
+[palettes.volcanic_shale_deep] #    fish:"catppuccin-macchiato"  kitty:"Catppuccin-Macchiato"
+fg0 = '#f0e3da'
+seg1 = '#565e7b'
+seg2 = '#5f5361'
+seg3 = '#93677a'
+err = '#ef8079'
+root = '#9e3b33'
+vim0 = '#e5c890'
+vim1 = '#ca9ee6'
+vim2 = '#ef9f76'
+
+[palettes.kelp_forest_shallow] #    fish:"solarized"  kitty:"Everforest Light Hard"
+fg0  = '#ffffff'
+seg1 = '#7395a6'
+seg2 = '#7ca294'
+seg3 = '#b8a284'
+err  = '#7a2e2a'
+root = '#b37772'
+vim0 = '#2f5a3c'
+vim1 = '#6b3a63'
+vim2 = '#6b4610'
+
+[palettes.kelp_forest_deep] #  fish:"solarized"  kitty:"Everforest Light Hard"
+fg0  = '#dce6e2'
+seg1 = '#4b728b'
+seg2 = '#588778'
+seg3 = '#b38C5f'
+err  = '#ee9a94'
+root = '#9e4b48'
+vim0 = '#a7c080'
+vim1 = '#d699b6'
+vim2 = '#dbbc7f'
 
 [username]
 show_always = true
-style_user = "bg:aqua fg:fg0"
-style_root = "bg:red fg:fg0"
+style_user = "bg:seg1 fg:fg0"
+style_root = "bg:root fg:fg0"
 format = '[$user]($style)'
 
 [directory]
-style = "fg:fg0 bg:blue"
+style = "fg:fg0 bg:seg2"
 format = "[$path]($style)"
 truncation_length = 300
 fish_style_pwd_dir_length = 1
 
 [git_branch]
 symbol = ""
-format = '[$symbol $branch](fg:fg0 bg:purple)'
+format = '[$symbol $branch](fg:fg0 bg:seg3)'
 
 [git_status]
-format = '[($all_status$ahead_behind )](fg:fg0 bg:purple)'
+format = '[($all_status$ahead_behind)](fg:fg0 bg:seg3)'
 
 [character]
 disabled = false
 format = "$symbol"
-success_symbol = '[󰛢 ](bg:aqua bold fg:fg0)'
-error_symbol = '[ ](bg:aqua bold fg:red)'
-vimcmd_symbol = '[](bg:aqua bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bg:aqua bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bg:aqua bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bg:aqua bold fg:color_yellow)'
+success_symbol = '[󰛢 ](bg:seg1 bold fg:fg0)'
+error_symbol = '[ ](bg:seg1 bold fg:red)'
+vimcmd_symbol = '[](bg:seg1 bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bg:seg1 bold fg:color_seg3)'
+vimcmd_replace_symbol = '[](bg:seg1 bold fg:color_seg3)'
+vimcmd_visual_symbol = '[](bg:seg1 bold fg:color_yellow)'
 
 [line_break]
 disabled = true
