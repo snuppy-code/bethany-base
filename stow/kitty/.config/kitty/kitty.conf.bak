@@ -2481,6 +2481,6 @@ tab_powerline_style slanted
 
 
 # BEGIN_KITTY_THEME
-# Atelier Estuary Dark
+# Base2Tone Evening Dark
 include current-theme.conf
 # END_KITTY_THEME

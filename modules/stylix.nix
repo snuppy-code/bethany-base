@@ -21,6 +21,7 @@
     # - sandcastle
     # - twilight
     # - vulcan
+    # - yesterday-night
     base16Scheme = "${pkgs.base16-schemes}/share/themes/yesterday-night.yaml";
     # light:
     # - atelier-plateau-light
