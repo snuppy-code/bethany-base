@@ -30,8 +30,5 @@ if status is-interactive
     end
     echo ""
 
-    abbr --add nval "nix-instantiate --eval"
-    abbr --add nvals "nix-instantiate --eval --strict"
-    abbr --add nos nh os switch
     starship init fish | source
 end
