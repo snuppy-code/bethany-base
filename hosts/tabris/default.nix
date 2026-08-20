@@ -48,6 +48,7 @@
           ../../modules-hm/home-manager.nix
           ../../modules-hm/gnome.nix
           ../../modules-hm/stylix.nix
+          ../../modules-hm/common-apps.nix
           ../../modules-hm/virtualization.nix
         ];
       };

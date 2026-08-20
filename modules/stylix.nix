@@ -6,21 +6,31 @@
 }: {
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
     image = ../assets/wallpapers/mountains/a_snowy_mountain_with_dark_clouds.jpg;
     polarity = "dark";
 
     # https://github.com/tinted-theming/schemes
     # https://tinted-theming.github.io/tinted-gallery/
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-medium.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ocean.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/sandcastle.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/vulcan.yaml";
+    # dark:
+    # - ashes
+    # - everforest-dark-medium
+    # - kanagawa
+    # - ocean
+    # - nord
+    # - sandcastle
+    # - twilight
+    # - vulcan
     base16Scheme = "${pkgs.base16-schemes}/share/themes/yesterday-night.yaml";
+    # light:
+    # - atelier-plateau-light
+    # - sagelight
+    # - classic-light
+    # - brush-trees
+    # - material-lighter
+    # - nord-light
+    # - penumbra-light
+    # - cupcake
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
@@ -46,6 +56,35 @@
         package = pkgs.nerd-fonts._0xproto;
         name = "0xProto Nerd Font";
       };
+    };
+
+    targets = {
+      # anki
+      # bat
+      # blender
+      # btop
+      # cava
+      # discord
+      # kitty.enable = true;
+      # lazygit.enable = true;
+      nvf.enable = true;
+      # firefox.enable = true;
+      # fzf.enable = true;
+      gnome-text-editor.enable = true;
+      gnome.enable = true;
+      gtk.enable = true;
+      qt.enable = true;
+      gtksourceview.enable = true;
+      nixos-icons.enable = true;
+      # fish
+      # mpv
+      # Obsidian
+      # spicetify
+      # starship
+      # tmux
+      # vscode
+      # yazi
+      # zed
     };
   };
 }

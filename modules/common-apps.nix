@@ -67,7 +67,6 @@
       veracrypt
       processing
       github-desktop
-      zed-editor
     ]
     ++ [
       inputs.helium.packages.${pkgs.system}.default

@@ -21,14 +21,14 @@ if status is-interactive
         clear
     end
 
-    echo ""
-    if test $hostname = lilin
-        cat /etc/nixos/bethany-base/assets/nixlogo/unicode/green-yellow
-    end
-    if test $hostname = tabris
-        cat /etc/nixos/bethany-base/assets/nixlogo/unicode/yellow-magenta
-    end
-    echo ""
+    # echo ""
+    # if test $hostname = lilin
+    #     cat /etc/nixos/bethany-base/assets/nixlogo/unicode/green-yellow
+    # end
+    # if test $hostname = tabris
+    #     cat /etc/nixos/bethany-base/assets/nixlogo/unicode/yellow-magenta
+    # end
+    # echo ""
 
     starship init fish | source
 end
