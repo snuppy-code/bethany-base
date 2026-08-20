@@ -1,0 +1,50 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+[┌───────────────────>](green)
+[|](green)$username$directory$hostname
+[└─>](green)'''
+
+scan_timeout = 10 #ms
+command_timeout = 500 #ms
+follow_symlinks = true
+add_newline = true
+
+palette = "foo"
+
+[palettes.foo]
+blue = '21'
+mustard = '#af8700'
+
+[character]
+success_symbol = '[➜](bold_green)'
+
+# disable 'package' module. modules provide information we can use in our prompt, e.g. "via node 3.6"
+[package]
+disabled = true
+
+# Format Strings can have variables, text, and nested text groups. They are like the 'HTML & JS'.
+# Style Strings style format strings. They are like the 'CSS'.
+
+# These are used together in Text Groups: '[my format string here](my style string here)'
+# Text Groups are defined with '[stuff]', and optionally styled.
+# nested: '[a [b](red) c](green)' -> a b c, with green a, c, and red b.
+# i.e. nested style overrides outer style
+
+# more on Style Strings:
+# 'fg:red bg:blue' red text on a blue background
+# 'bold fg:27' foreground text becomes bold ANSI color 27. not conditional
+# 'underline bg:#bf5700' sets underlined text on a burnt background
+# 'bold italic fg:purple'
+# '' explicitly disables all styling
+
+# Conditional Format Strings are specified by putting () around.
+# "conditional" format strings don't render if ALL variables within are empty
+# '(@$region)' will show nothing if `region` variable is `None` or empty string. Otherwise @ followed by the value of `region`.
+# '(some text)' will always show nothing as there are no variables.
+# When `$combined` is a shortcut for '[$a$b]', '($combined)' will show nothing only if $a and $b are both none or empty strings.
+#   This is the same as '([$a$b])'.
+
+# Some modules take a list of strings to match (e.g. detect_{files,extensions,folders}). You specify a negative pattern by leading the string with a !.
+# Any negative match in a directory means the directory is not matched?
+# extensions are matched against everything after the first dot, and everything after the last dot.

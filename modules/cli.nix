@@ -45,6 +45,7 @@
     # fun
     fastfetch
     speedtest-cli
+    starship
   ];
   services.locate = {
     enable = true;
