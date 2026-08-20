@@ -13,7 +13,7 @@ if status is-interactive
     # 2 if can't reach agent
     set ecode $status
     if test $ecode -eq 2
-        echo "divine link severed !!!!!!!! (can't reach ssh-agent, did you remove it nix config?)"
+        echo "divine link severed !!!!!!!! (can't reach ssh-agent, did you remove it from nix config?)"
     end
     if test $ecode -eq 1
         echo "ssh-agent loading keys..."

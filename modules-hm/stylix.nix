@@ -11,11 +11,11 @@
     # btop
     # cava
     # discord
-    kitty.enable = true;
-    starship.enable = true;
-    lazygit.enable = true;
+    # starship.enable = true;
+    # lazygit.enable = true;
     zed.enable = true;
-    fish.enable = true;
+    # kitty.enable = true; # nuh, own theme
+    # fish.enable = true; # nuh, own theme
     nvf.enable = true;
     firefox = {
       enable = true;
