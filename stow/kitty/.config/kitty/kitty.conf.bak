@@ -2481,6 +2481,6 @@ tab_powerline_style slanted
 
 
 # BEGIN_KITTY_THEME
-# Aquarium Dark
+# Atelier Estuary Dark
 include current-theme.conf
 # END_KITTY_THEME
