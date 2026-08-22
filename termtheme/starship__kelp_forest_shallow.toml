@@ -19,7 +19,7 @@ $directory\
 # [](fg:seg3 bg:seg4)\
 # [ ](bg:seg4 fg:fg0)$nix_shell\
 
-palette = 'volcanic_shale_deep'
+palette = 'kelp_forest_shallow'
 
 [palettes.kelp_forest_shallow] #    fish:"solarized"  kitty:"Everforest Light Hard"
 fg0  = '#ffffff'

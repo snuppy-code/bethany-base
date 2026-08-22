@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x2311
+SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x2313
 SETUVAR base16_theme:yesterday\x2dnight
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr
@@ -12,15 +12,15 @@ SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_end:c397d8
 SETUVAR fish_color_error:d54e53
 SETUVAR fish_color_escape:00a6b2
-SETUVAR fish_color_gray:6e738d
+SETUVAR fish_color_gray:9ca0b0
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:\x2d\x2dreset
 SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_keyword:ab4642
+SETUVAR fish_color_keyword:8839ef
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:\x2d\x2dreset
 SETUVAR fish_color_operator:00a6b2
-SETUVAR fish_color_option:b184ab
+SETUVAR fish_color_option:40a02b
 SETUVAR fish_color_param:7aa6da
 SETUVAR fish_color_quote:b9ca4a
 SETUVAR fish_color_redirection:70c0b1
@@ -34,11 +34,11 @@ SETUVAR fish_pager_color_completion:\x2d\x2dreset
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan\x1e\x2d\x2dbold
-SETUVAR fish_pager_color_secondary_background:\x2d\x2dbackground\x3df8f5e4
-SETUVAR fish_pager_color_secondary_completion:5c6a72
-SETUVAR fish_pager_color_secondary_description:a6b0a0
-SETUVAR fish_pager_color_secondary_prefix:5e94ba
+SETUVAR fish_pager_color_secondary_background:\x1d
+SETUVAR fish_pager_color_secondary_completion:f8f8f2
+SETUVAR fish_pager_color_secondary_description:6272a4
+SETUVAR fish_pager_color_secondary_prefix:8be9fd
 SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_pager_color_selected_completion:5c6a72
-SETUVAR fish_pager_color_selected_description:829181
-SETUVAR fish_pager_color_selected_prefix:5e94ba\x1e\x2d\x2dbold
+SETUVAR fish_pager_color_selected_completion:f8f8f2
+SETUVAR fish_pager_color_selected_description:6272a4
+SETUVAR fish_pager_color_selected_prefix:8be9fd
