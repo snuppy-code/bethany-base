@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  networking.firewall.enable = true; # on by default but hey why not just throw that on there
+
   networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
     22 # ssh on tailscale only
   ];
