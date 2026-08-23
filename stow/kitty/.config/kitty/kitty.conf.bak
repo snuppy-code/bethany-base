@@ -2482,6 +2482,6 @@ tab_powerline_style slanted
 
 
 # BEGIN_KITTY_THEME
-# Everforest Light Hard
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME

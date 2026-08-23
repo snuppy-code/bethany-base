@@ -3,7 +3,6 @@
 format = """
 [](fg:seg1)\
 [ ](fg:fg0 bg:seg1)$character$username\
-
 $hostname\
 [ ](fg:seg1)\
 [](fg:seg2)\
@@ -21,7 +20,7 @@ $directory\
 # [](fg:seg3 bg:seg4)\
 # [ ](bg:seg4 fg:fg0)$nix_shell\
 
-palette = 'volcanic_shale_deep'
+palette = 'kelp_forest_shallow'
 
 [palettes.kelp_forest_shallow] #    fish:"solarized"  kitty:"Everforest Light Hard"
 fg0  = '#ffffff'
@@ -109,11 +108,11 @@ format = '[($all_status$ahead_behind)](fg:fg0 bg:seg3)'
 disabled = false
 format = "$symbol"
 success_symbol = '[󰛢 ](bg:seg1 bold fg:fg0)'
-error_symbol = '[ ](bg:seg1 bold fg:red)'
-vimcmd_symbol = '[](bg:seg1 bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bg:seg1 bold fg:color_seg3)'
-vimcmd_replace_symbol = '[](bg:seg1 bold fg:color_seg3)'
-vimcmd_visual_symbol = '[](bg:seg1 bold fg:color_yellow)'
+error_symbol = '[ ](bg:seg1 bold fg:err)'
+vimcmd_symbol = '[](bg:seg1 bold fg:green)'
+vimcmd_replace_one_symbol = '[](bg:seg1 bold fg:vim0)'
+vimcmd_replace_symbol = '[](bg:seg1 bold fg:vim1)'
+vimcmd_visual_symbol = '[](bg:seg1 bold fg:vim2)'
 
 [nix_shell]
 disabled = false
@@ -126,8 +125,8 @@ style = 'bg:seg4 fg:fg0'
 [hostname]
 disabled = false
 ssh_only = false
-ssh_symbol = '󰽧'#   󰤉 󰑱   󱎃     󰽧 󰽨 󰽥
-format = '[@$hostname( $symbol)]($style)'
+ssh_symbol = ' 󰽧'#   󰤉 󰑱   󱎃     󰽧 󰽨 󰽥
+format = '[@$hostname$ssh_symbol]($style)'
 style = 'bg:seg1 fg:fg0'
 
 [line_break]
