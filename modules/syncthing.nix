@@ -5,35 +5,25 @@
   lib,
   ...
 }: {
-  # The syncthing perms and security is as follows:
-  # Synced folders go in /srv/, syncthing runs as petrova:petrova, and has access only
-  # to the few paths it needs. This does not include e.g. user homes. It has umask 007
-  # and so creates with rw-rw----, drwxrwx---.
-  # Nya's user has its own group (snuppy:snuppy), and is also in petrova group.
-  # petrova user is also in `snuppy` group.
-  # Nya's user has umask 007 and so creates with rw-rw----, drwxrwx---.
-
-  users.groups.petrova.gid = 2019; # year of petrova line discovery
-
-  users.users.petrova = {
-    isSystemUser = true;
-    description = "user for syncthing";
-    uid = 2019;
-    group = "petrova";
-    extraGroups = ["snuppy"]; # seems scary ! but systemd serviceConfig hides all but what it needs so it should be good ! (add other users to this list)
-  };
+  # Nya has reconcluded that running syncthing as its own user is not possible without having to constantly chmod stuff during usage,
+  #  so nya will be running it as nyas user.
+  # The problem is that while nya can add nyaself to syncthing's group, and syncthing to nya's group,
+  #  and change the syncthing service's umask and nya's own umask so nya only ever creates files that are rw for group (so syncthing can read it),
+  #  some programs will just straight up ignore this (chmod their files after the fact) or complain if group has rw,
+  #  so nya will inevitably have to chmod stuff to fix sync issues in the future, and nya can't be arsed.
+  #  the level of isolation you can get by setting options in serviceConfig should be good enough
 
   sops.secrets.syncthing-password = {
-    owner = "petrova";
-    group = "petrova";
+    owner = "snuppy";
+    group = "root";
     mode = "400";
   };
 
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
-    user = "petrova";
-    group = "petrova";
+    user = "snuppy";
+    group = "snuppy";
     guiAddress =
       {
         lilin = "100.74.91.73:8384";
@@ -74,7 +64,7 @@
         "sol" = {
           # personal files
           id = "nerjd-lbvyj";
-          path = "/srv/sol/";
+          path = "/home/snuppy/sync/sol/";
           ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
@@ -91,7 +81,7 @@
         "eri" = {
           # shared with bunni
           id = "7uig4-rufph";
-          path = "/srv/eri/";
+          path = "/home/snuppy/sync/eri/";
           ignorePerms = true;
           ignorePatterns = [
             "workspace.json"
@@ -114,12 +104,14 @@
   # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
   systemd.services.syncthing = {
     serviceConfig = {
-      ProtectHome = true;
+      ProtectHome = "tmpfs";
+      BindPaths = [
+        "/home/snuppy/sync/sol"
+        "/home/snuppy/sync/eri"
+      ];
       ProtectSystem = "strict";
       ReadWritePaths = [
         "/var/lib/syncthing"
-        "/srv/sol"
-        "/srv/eri"
       ];
       UMask = "007";
     };
