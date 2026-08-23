@@ -19,16 +19,20 @@
     mode = "400";
   };
 
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
+    22000 # data transfer, not necessary but fuck it we'll have that there anyway
+    8384 # gui
+  ];
+  networking.firewall.interfaces.tailscale0.allowedUDPPorts = [
+    22000 # data transfer, not necessary but fuck it we'll have that there anyway
+  ];
+
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
     user = "snuppy";
     group = "snuppy";
-    guiAddress =
-      {
-        lilin = "100.74.91.73:8384";
-        tabris = "100.73.209.34:8384";
-      }."${config.networking.hostName}" or "127.0.0.1:8384";
+    guiAddress = "0.0.0.0";
     overrideDevices = true;
     overrideFolders = true;
     guiPasswordFile = config.sops.secrets.syncthing-password.path;
