@@ -3,7 +3,6 @@
 format = """
 [](fg:seg1)\
 [ ](fg:fg0 bg:seg1)$character$username\
-
 $hostname\
 [ ](fg:seg1)\
 [](fg:seg2)\
