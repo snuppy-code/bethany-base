@@ -125,8 +125,8 @@ style = 'bg:seg4 fg:fg0'
 [hostname]
 disabled = false
 ssh_only = false
-ssh_symbol = '󰽧'#   󰤉 󰑱   󱎃     󰽧 󰽨 󰽥
-format = '[@$hostname( $ssh_symbol)]($style)'
+ssh_symbol = ' 󰽧'#   󰤉 󰑱   󱎃     󰽧 󰽨 󰽥
+format = '[@$hostname$ssh_symbol]($style)'
 style = 'bg:seg1 fg:fg0'
 
 [line_break]
