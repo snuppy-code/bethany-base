@@ -23,7 +23,7 @@
     ../../modules/exposed.nix
     ../../modules/ssh.nix
     ../../modules/tailscale.nix
-    # ../../modules/syncthing.nix
+    ../../modules/syncthing.nix
     ../../modules/kde-connect.nix
     ../../modules/git-systemwide.nix
     ../../modules/nix.nix
