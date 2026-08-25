@@ -31,6 +31,7 @@
       proton-vpn
       normcap
       anki
+      pdfpc
       libreoffice-still # should be gtk
       obsidian
       nextcloud-client
