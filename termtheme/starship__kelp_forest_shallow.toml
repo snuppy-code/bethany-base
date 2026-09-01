@@ -1,18 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:seg1)\
-[ ](fg:fg0 bg:seg1)$character$username\
-$hostname\
-[ ](fg:seg1)\
-[](fg:seg2)\
-$directory\
-[](fg:seg2 bg:seg3)\
-[ ](fg:fg0 bg:seg3)\
-($git_branch[ ](fg:fg0 bg:seg3))\
-[](fg:seg3 bg:seg4)\
-[ ](bg:seg4 fg:fg0)$nix_shell\
-[ ](fg:seg4)\
+[](fg:seg1)$username$hostname[ ](fg:seg1)\
+[](fg:seg2)$directory[](fg:seg2)\
+$git_branch\
+$nix_shell
+[ ](fg:fg1)$character[ ](fg:seg2)
 """
 #
 #
@@ -24,6 +17,7 @@ palette = 'kelp_forest_shallow'
 
 [palettes.kelp_forest_shallow] #    fish:"solarized"  kitty:"Everforest Light Hard"
 fg0  = '#ffffff'
+fg1  = '#5c6a72'
 seg1 = '#6d9ba7'#7c9ca4 #6d9ba7
 seg2 = '#7c9f8b'#82a390 #7c9f8b
 seg3 = '#b7be84'#b7be84 #b7be84
@@ -93,13 +87,14 @@ format = '[$user]($style)'
 
 [directory]
 style = "fg:fg0 bg:seg2"
-format = "[$path ]($style)"
-truncation_length = 300
-fish_style_pwd_dir_length = 1
+format = "[$path]($style)"
+truncation_length = 2 # how many do we keep?
+fish_style_pwd_dir_length = 1 # of those we don't keep, how short do they become?
 
 [git_branch]
 symbol = ""
-format = '[$symbol $branch](fg:fg0 bg:seg3)'
+format = '[ ](fg:seg3)[$symbol $branch](fg:fg0 bg:seg3)[](fg:seg3)'
+
 
 [git_status]
 format = '[($all_status$ahead_behind)](fg:fg0 bg:seg3)'
@@ -107,19 +102,28 @@ format = '[($all_status$ahead_behind)](fg:fg0 bg:seg3)'
 [character]
 disabled = false
 format = "$symbol"
-success_symbol = '[󰛢 ](bg:seg1 bold fg:fg0)'
-error_symbol = '[ ](bg:seg1 bold fg:err)'
-vimcmd_symbol = '[](bg:seg1 bold fg:green)'
-vimcmd_replace_one_symbol = '[](bg:seg1 bold fg:vim0)'
-vimcmd_replace_symbol = '[](bg:seg1 bold fg:vim1)'
-vimcmd_visual_symbol = '[](bg:seg1 bold fg:vim2)'
+success_symbol = '[󰛢 ](bold fg:fg1)'
+error_symbol = '[ ](bold fg:err)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:vim0)'
+vimcmd_replace_symbol = '[](bold fg:vim1)'
+vimcmd_visual_symbol = '[](bold fg:vim2)'
+# [character]
+# disabled = false
+# format = "$symbol"
+# success_symbol = '[󰛢 ](bg:seg1 bold fg:fg0)'
+# error_symbol = '[ ](bg:seg1 bold fg:err)'
+# vimcmd_symbol = '[](bg:seg1 bold fg:green)'
+# vimcmd_replace_one_symbol = '[](bg:seg1 bold fg:vim0)'
+# vimcmd_replace_symbol = '[](bg:seg1 bold fg:vim1)'
+# vimcmd_visual_symbol = '[](bg:seg1 bold fg:vim2)'
 
 [nix_shell]
 disabled = false
 impure_msg = ''
 pure_msg = ''
 unknown_msg = ''
-format = '[$state ]($style)'
+format = '[ ](fg:seg4)[ $state ]($style)[ ](fg:seg4)'
 style = 'bg:seg4 fg:fg0'
 
 [hostname]
