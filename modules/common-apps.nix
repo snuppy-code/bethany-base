@@ -45,6 +45,7 @@
       pavucontrol
       krita
       aseprite
+            xournalpp
       blender
       obs-studio
       audacity
