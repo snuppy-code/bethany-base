@@ -5,10 +5,14 @@
             "args": [],
             "projects": [
                 {
-                    "paths": ["/etc/nixos/terminal-dogma"],
+                    "paths": [
+                        "/etc/nixos/terminal-dogma",
+                    ],
                 },
                 {
-                    "paths": ["/home/snuppy/Projects"],
+                    "paths": [
+                        "/home/snuppy/Projects",
+                    ],
                 },
             ],
         },
@@ -17,7 +21,9 @@
             "args": [],
             "projects": [
                 {
-                    "paths": ["/home/snuppy/Projects/nix/terminal-dogma/./"],
+                    "paths": [
+                        "/home/snuppy/Projects/nix/terminal-dogma/./",
+                    ],
                 },
             ],
         },
@@ -57,14 +63,21 @@
         "nil": {
             "initialization_options": {
                 "formatting": {
-                    "command": ["alejandra", "--quiet", "--"],
+                    "command": [
+                        "alejandra",
+                        "--quiet",
+                        "--",
+                    ],
                 },
             },
         },
         "nu": {
             "initialization_options": {
                 "formatting": {
-                    "command": ["nufmt", "--"],
+                    "command": [
+                        "nufmt",
+                        "--",
+                    ],
                 },
             },
         },
@@ -150,7 +163,9 @@
                 "terminal": {
                     "font_size": 11,
                     "font_family": "0xProto Nerd Font",
-                    "font_fallbacks": ["Noto Sans Symbols 2"],
+                    "font_fallbacks": [
+                        "Noto Sans Symbols 2",
+                    ],
                 },
                 "ui_font_size": 13,
                 "buffer_font_size": 11,
@@ -241,7 +256,9 @@
                 "terminal": {
                     "font_size": 13,
                     "font_family": "0xProto Nerd Font",
-                    "font_fallbacks": ["Noto Sans Symbols 2"],
+                    "font_fallbacks": [
+                        "Noto Sans Symbols 2",
+                    ],
                 },
                 "ui_font_size": 16,
                 "buffer_font_size": 15,
