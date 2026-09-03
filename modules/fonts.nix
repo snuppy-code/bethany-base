@@ -14,7 +14,7 @@
     vazir-fonts
     fira-code
     fira-code-symbols
-    droid-sans-mono
+        #droid-sans-mono
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
