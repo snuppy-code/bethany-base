@@ -27,5 +27,6 @@
     burn-my-windows
     rounded-window-corners-reborn
     coverflow-alt-tab
+    color-picker
   ];
 }
