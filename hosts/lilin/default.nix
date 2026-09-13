@@ -21,6 +21,7 @@
     ../../modules/audio.nix
     ../../modules/security.nix
     ../../modules/exposed.nix
+    ../../modules/nuphy.nix
     ../../modules/ssh.nix
     ../../modules/tailscale.nix
     # ../../modules/syncthing.nix
