@@ -51,6 +51,8 @@
       audacity
       # freecad
 
+      postgresql # for in2010
+
       protonplus
 
       (prismlauncher.override {
