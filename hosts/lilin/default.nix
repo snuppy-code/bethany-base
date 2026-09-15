@@ -32,6 +32,7 @@
     ../../modules/cli.nix
     ../../modules/nvf.nix
     ../../modules/common-apps.nix
+    ../../modules/espanso.nix
     ../../modules/thunar.nix
     ../../modules/steam.nix
     ../../modules/ld.nix
