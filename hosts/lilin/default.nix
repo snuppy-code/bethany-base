@@ -15,7 +15,8 @@
     inputs.nix-flatpak.nixosModules.nix-flatpak
     ../../modules/sops.nix
     ../../modules/base-hardware.nix
-    ../../modules/gnome.nix
+    # ../../modules/gnome.nix
+    ../../modules/niri.nix
     ../../modules/virtualization.nix
     ../../modules/regional.nix
     ../../modules/audio.nix
@@ -46,7 +47,7 @@
           ./modules-hm/snuppy.nix
           inputs.sops-nix.homeManagerModule
           ../../modules-hm/home-manager.nix
-          ../../modules-hm/gnome.nix
+          # ../../modules-hm/gnome.nix
           ../../modules-hm/stylix.nix
           ../../modules-hm/common-apps.nix
           ../../modules-hm/virtualization.nix
