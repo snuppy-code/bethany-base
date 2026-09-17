@@ -1,3 +1,70 @@
 matches:
-  - trigger: ":espanso"
-    replace: "Hi there!"
+    - trigger: ",xfloat"
+      replace: "Jeg får feilmelding når jeg oppgir 37.78! Hvis du konverterer med `float( )` istedenfor `int( )` får du ikke feilmelding i det tilfellet, siden flyttall kan representere desimaltall."
+    - trigger: ",yfloat"
+      replace: "Jeg liker at du bruker `float( )` og dermed passer på tilfellet der input har desimaler :)"
+
+    - trigger: ",xlow"
+      replace: "Du kunne vurdert å bruke .lower() eller .upper() for å passe på at det ikke har noe å si om brukeren skriver stor eller liten bokstav !"
+    - trigger: ",ylow"
+      replace: "Jeg liker at du bruker .lower() så det ikke har noe å si om brukeren skriver stor eller liten bokstav :)"
+
+    - trigger: ",ymel"
+      replace: "Jeg liker at du har mellomrom etter teksten din når du henter inn tekst fra brukeren, så det de skriver ikke er rett inntil spørsmålet :)"
+
+    - trigger: ",xpros"
+      replace: "Du bør unngå prosedyrer med navn med stor forbokstav (!) se gjerne notat lenger ned om hvorfor."
+    - trigger: ",npros"
+      replace: |
+          ### Om navn på prosedyrer
+
+          De fleste programmeringsspråk har sine standarder eller konvensjoner for hvordan man navngir forskjellige ting. Mesteparten av python-koden i verden følger standarden som heter "PEP-8", og IN1000 følger stort sett også denne.
+
+          I PEP-8 står det at en ikke skal starte prosedyrer sine navn med stor bokstav, da dette brukes bla. for navn på klasser, noe dere kommer til å møte på om noen uker.
+
+          Du trenger nok ikke huske PEP-8, men du bør starte prosedyrenavn med liten bokstav:
+          ```py
+          # 👎️
+          def Ost():
+              print("ost")
+
+          # 👍️
+          def ost():
+              print("ost")
+          ```
+
+    - trigger: ",xvar"
+      replace: "Du bør unngå variabelnavn med stor forbokstav (!) se gjerne notat lenger ned om hvorfor."
+    - trigger: ",nvar"
+      replace: |
+          ### Om variabelnavn
+
+          De fleste programmeringsspråk har sine standarder eller konvensjoner for hvordan man navngir forskjellige ting. Mesteparten av python-koden i verden følger standarden som heter "PEP-8", og IN1000 følger stort sett også denne.
+
+          I PEP-8 står det at en ikke skal starte variabler sine navn med stor bokstav, da dette brukes bla. for navn på klasser, noe dere kommer til å møte på om noen uker.
+
+          Du trenger nok ikke huske PEP-8, men du bør starte variabelnavn med liten bokstav:
+          ```py
+          # 👎️
+          Hovedrett = "ja"
+
+          # 👍️
+          hovedrett = "ja"
+          ```
+
+    - trigger: ",quiz"
+      replace: |
+          # **Quiz** - ✅
+
+          8 av 8, full pott :D
+
+          # Bestått - 🪇️🪇️
+
+          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe 😋
+
+          ![]()
+
+    - trigger: ",run"
+      replace: "Husk å kjøre og teste programmene dine før du leverer! Arbeidet med testing og retting av feil er kanskje der du lærer aller mest, ved å rette opp i misforståelser og bli tryggere på python. Finner du ikke ut hva som er feil, skal det kommenteres i Devilry"
+    - trigger: ",2float"
+      replace: "Merk at vi fort kommer til å møte på problemer hvis vi prøver å utvide koden på grunn av en liten ting som mangler. input gir tilbake str, ikke float, så når du tilordner de nye varene til ordboka, får du at noen varer har en verdi av type float, og andre (de nye) har en verdi av type str. Vi vil helst unngå denne typen blanding av typer, så det hadde vært smart å bruke `float( )` rundt `input( )` for å konvertere typen"
