@@ -1,0 +1,9 @@
+matches:
+  - trigger: ",sig"
+    replace: |
+      Hei,
+
+      $|$
+
+      Mvh,
+      Frøya Lydersen

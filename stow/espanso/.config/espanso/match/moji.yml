@@ -1,0 +1,13 @@
+matches:
+    - trigger: ",oi"
+      replace: "{{emoji}}"
+      vars:
+          - name: emoji
+            type: choice
+            params:
+                values:
+                    - "❌"
+                    - "✅"
+                    - "👍️"
+                    - "👎️"
+                    - "🪇️"

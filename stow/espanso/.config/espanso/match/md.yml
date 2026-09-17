@@ -1,0 +1,28 @@
+matches:
+    - trigger: ",pc"
+      replace: "```postgresql\n"
+
+    - trigger: ",ll"
+      replace: "[]($|$)"
+
+    - trigger: ",lg"
+      replace: "[]({{url}})"
+      vars:
+          - name: url
+            type: match
+            params:
+                trigger: ",gif"
+
+    - trigger: ",gif"
+      replace: "{{url}}"
+      vars:
+          - name: url
+            type: choice
+            params:
+                values:
+                    - label: "goog.."
+                      id: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG54c2dtZGQwc3p6dTdhenRoNHg5M3MwZDdpNHhjZmt3NjVjaDQyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hcu9MTtCRRszQIys23/giphy.gif"
+                    - label: "get jiggy with it"
+                      id: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3dlNHZidzlqNGs2bXN1Y3U5ZmJtc3A2aWFla2JpMDlhaWd4b2Y5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iGrs18WmFJsGZkIiHO/giphy.gif"
+                    - label: "happy cat"
+                      id: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcThvYnJnODQ3YjU0c2t4YTJsN3M5aTM0b2xmOG1nbHYya2Q4bnhxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kLPgPCS9QplpgX8ec2/giphy.gif"

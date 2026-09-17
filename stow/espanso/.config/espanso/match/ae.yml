@@ -1,0 +1,10 @@
+matches:
+    - trigger: "a,o"
+      replace: "å"
+      propagate_case: true
+    - trigger: "a,e"
+      replace: "æ"
+      propagate_case: true
+    - trigger: "o,o"
+      replace: "ø"
+      propagate_case: true
