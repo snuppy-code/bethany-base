@@ -47,6 +47,8 @@
     mako
     swayidle
     xwayland-satellite
+    jq
+    wl-mirror
   ];
 
   # portals configured for nya already by the thingamajig
