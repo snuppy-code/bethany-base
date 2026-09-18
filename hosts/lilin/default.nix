@@ -16,6 +16,7 @@
     ../../common-modules.nix
     # ../../modules/gnome.nix
     ../../modules/niri.nix
+    ../../modules/niri-dynamic-windows
     {
       home-manager.users.snuppy = {
         imports = [
