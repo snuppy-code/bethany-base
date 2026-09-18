@@ -22,7 +22,28 @@
   environment.systemPackages = with pkgs; [
     fuzzel
     swaylock
+
     nautilus
+
+    engrampa
+    file-roller
+    peazip
+
+    lite-xl
+
+    oculante
+    # loupe # oculante is fine and has extra cool stuff
+
+    mpv
+    showtime
+    # celluloid # had a terrible experience
+    # clapper # had an awful experience
+
+    newsflash
+
+    euphonica
+    amberol
+
     mako
     swayidle
     xwayland-satellite
