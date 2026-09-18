@@ -47,6 +47,8 @@
     mako
     swayidle
     xwayland-satellite
+
+    kanshi
     jq
     wl-mirror
   ];
