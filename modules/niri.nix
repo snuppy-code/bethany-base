@@ -18,7 +18,7 @@
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service, explicitly enable
   security.pam.services.swaylock = {};
-  programs.waybar.enable = true; # top bar
+  # programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
     fuzzel
     swaylock
