@@ -22,6 +22,7 @@
           ./modules-hm/snuppy.nix
           # ../../modules-hm/gnome.nix
           ../../modules-hm/mpd.nix
+          ../../modules-hm/kanshi.nix
         ];
       };
     }
