@@ -44,6 +44,8 @@
     euphonica
     amberol
 
+    overskride
+
     mako
     swayidle
     xwayland-satellite
@@ -53,7 +55,7 @@
     wl-mirror
   ];
 
-  # portals configured for nya already by the thingamajig
+  # portals configured for nya already by programs.niri
 
   # NixOS otherwise injects a stripped PATH via Environment= on the niri.service
   # unit which shadows the imported user-manager PATH. Disabling the default
