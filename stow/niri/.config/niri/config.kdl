@@ -46,6 +46,8 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
     scale 1
 }
 
+spawn-at-startup "kanshi"
+
 prefer-no-csd
 
 layout {
