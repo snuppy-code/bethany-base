@@ -2,7 +2,12 @@ profile undocked {
     output eDP-1 enable
 }
 
-profile docked {
+profile home {
     output eDP-1 disable
+    output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" enable
+}
+
+profile out {
+    output eDP-1 enable
     output * enable
 }
