@@ -4,13 +4,18 @@
   inputs,
   ...
 }: {
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${config.programs.niri.package}/bin/niri-session";
-        user = "snuppy";
-      };
+  services.displayManager = {
+    sessionPackages = [pkgs.niri];
+    sddm = {
+      theme = "pixie";
+      enable = true;
+      wayland.enable = true;
+      package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtdeclarative
+        kdePackages.qt5compat
+      ];
     };
   };
   programs.niri.enable = true;
@@ -20,6 +25,17 @@
   security.pam.services.swaylock = {};
   # programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
+    (inputs.pixie-sddm.packages.${pkgs.stdenv.hostPlatform.system}.pixie-sddm.override {
+      background = ../assets/wallpapers/minecraft/tree-sunset.png;
+      avatar = ../assets/avatar/pfp_maki.png;
+      # accentColor = "#3F5F91"; # Hex color code
+      autoColor = true; # true/false
+      # backgroundColor = "#1A1C1E"; # Hex color code
+      # textColor = "#E2E2E6"; # Hex color code
+      fontFamily = "Jetbrains Mono";
+      # fontFamily = "0xProto Nerd Font";
+    })
+
     fuzzel
     swaylock
 
