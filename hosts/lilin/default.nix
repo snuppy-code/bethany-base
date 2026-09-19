@@ -24,6 +24,7 @@
           # ../../modules-hm/gnome.nix
           ../../modules-hm/mpd.nix
           ../../modules-hm/kanshi.nix
+          ../../modules-hm/waybar.nix
         ];
       };
     }
