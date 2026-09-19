@@ -48,6 +48,8 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
 
 prefer-no-csd
 
+spawn-at-startup "ashell"
+
 layout {
     gaps 8
 

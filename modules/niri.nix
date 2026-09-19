@@ -20,6 +20,8 @@
   };
   programs.niri.enable = true;
 
+  services.upower.enable = true;
+
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service, explicitly enable
   security.pam.services.swaylock = {};
