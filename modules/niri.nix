@@ -51,7 +51,7 @@
     swayidle
     xwayland-satellite
 
-    kanshi
+    # kanshi
     jq
     wl-mirror
   ];
