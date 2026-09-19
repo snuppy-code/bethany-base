@@ -1,0 +1,9 @@
+CONFIG_DIR="$HOME/.config/waybar/"
+
+while true; do
+    waybar &
+    pid=$!
+    inotifywait -e close_write,moved_to,create "$CONFIG_DIR/"
+    kill "$pid" || true
+    wait "$pid" || true
+done

@@ -17,14 +17,14 @@
         "format": "RAM {}%",
     },
     "network": {
-        "format-wifi": " {essid}",
+        "format-wifi": "  {essid}",
         "format-disconnected": "Offline",
     },
     "pulseaudio": {
         "format": "Volume {volume}%",
     },
 
-    "modules-center": ["network", "battery", "pulseaudio"],
+    "modules-center": ["network", "pulseaudio"],
 
     "modules-right": ["cpu", "memory", "battery"],
 

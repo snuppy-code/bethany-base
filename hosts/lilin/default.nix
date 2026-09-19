@@ -17,6 +17,7 @@
     # ../../modules/gnome.nix
     ../../modules/niri.nix
     ../../modules/niri-dynamic-windows
+    ../../modules/waybar-hot-reload
     {
       home-manager.users.snuppy = {
         imports = [
@@ -24,7 +25,6 @@
           # ../../modules-hm/gnome.nix
           ../../modules-hm/mpd.nix
           ../../modules-hm/kanshi.nix
-          ../../modules-hm/waybar.nix
         ];
       };
     }
