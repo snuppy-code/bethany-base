@@ -41,8 +41,9 @@
 
     newsflash
 
-    euphonica
+    # euphonica # didnt wanna load everything, no idea why, can't be arsed
     amberol
+    blanket
     decibels
 
     overskride
