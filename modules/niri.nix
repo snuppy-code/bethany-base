@@ -11,17 +11,6 @@
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service, explicitly enable
   environment.systemPackages = with pkgs; [
-    (inputs.pixie-sddm.packages.${pkgs.stdenv.hostPlatform.system}.pixie-sddm.override {
-      background = ../assets/wallpapers/minecraft/tree-sunset.png;
-      avatar = ../assets/avatar/pfp_maki.png;
-      # accentColor = "#3F5F91"; # Hex color code
-      autoColor = true; # true/false
-      # backgroundColor = "#1A1C1E"; # Hex color code
-      # textColor = "#E2E2E6"; # Hex color code
-      fontFamily = "Jetbrains Mono";
-      # fontFamily = "0xProto Nerd Font";
-    })
-
     fuzzel
 
     nautilus
