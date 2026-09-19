@@ -68,6 +68,7 @@
     swayidle
     xwayland-satellite
 
+    ashell
     # kanshi
     jq
     wl-mirror

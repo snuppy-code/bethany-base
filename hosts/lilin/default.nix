@@ -17,7 +17,6 @@
     # ../../modules/gnome.nix
     ../../modules/niri.nix
     ../../modules/niri-dynamic-windows
-    ../../modules/waybar-hot-reload
     {
       home-manager.users.snuppy = {
         imports = [
