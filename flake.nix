@@ -24,7 +24,8 @@
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
 
-    pixie-sddm.url = "github:xCaptaiN09/pixie-sddm";
+    qml-crap.url = "github:snuppy-code/qml-crap";
+    qml-crap.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -38,7 +39,7 @@
     stylix,
     slon,
     helium,
-    pixie-sddm,
+    qml-crap,
   } @ inputs: let
     nya = "x86_64-linux";
     lib = nixpkgs.lib;

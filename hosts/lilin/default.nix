@@ -13,6 +13,7 @@
     inputs.stylix.nixosModules.stylix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.qml-crap.nixosModules.default
     ../../common-modules.nix
     # ../../modules/gnome.nix
     ../../modules/niri.nix
@@ -23,6 +24,8 @@
           ./modules-hm/snuppy.nix
           # ../../modules-hm/gnome.nix
           ../../modules-hm/mpd.nix
+          inputs.qml-crap.homeModules.default
+          ../../modules-hm/qml-crap.nix
           ../../modules-hm/kanshi.nix
         ];
       };

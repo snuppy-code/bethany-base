@@ -4,28 +4,12 @@
   inputs,
   ...
 }: {
-  services.displayManager = {
-    sessionPackages = [pkgs.niri];
-    sddm = {
-      theme = "pixie";
-      enable = true;
-      wayland.enable = true;
-      package = pkgs.kdePackages.sddm;
-      extraPackages = with pkgs; [
-        kdePackages.qtsvg
-        kdePackages.qtdeclarative
-        kdePackages.qt5compat
-      ];
-    };
-  };
   programs.niri.enable = true;
 
   services.upower.enable = true;
 
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service, explicitly enable
-  security.pam.services.swaylock = {};
-  # programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
     (inputs.pixie-sddm.packages.${pkgs.stdenv.hostPlatform.system}.pixie-sddm.override {
       background = ../assets/wallpapers/minecraft/tree-sunset.png;
@@ -39,7 +23,6 @@
     })
 
     fuzzel
-    swaylock
 
     nautilus
 
@@ -67,7 +50,6 @@
     overskride
 
     mako
-    swayidle
     xwayland-satellite
 
     ashell
@@ -77,6 +59,19 @@
   ];
 
   # portals configured for nya already by programs.niri
+
+  services.qml-crap = {
+    lock.enable = true;
+    greeter = {
+      enable = true;
+      loginUser = "snuppy";
+      displayName = "Frøya";
+      wallpaper = ../assets/wallpapers/minecraft/tree-sunset.png;
+      avatar = ../assets/avatar/pfp_maki.png;
+      kanshi.configFile = ../stow/kanshi/.config/kanshi/config;
+      keyboard.layout = "us";
+    };
+  };
 
   # NixOS otherwise injects a stripped PATH via Environment= on the niri.service
   # unit which shadows the imported user-manager PATH. Disabling the default
