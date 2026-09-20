@@ -49,6 +49,7 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
 prefer-no-csd
 
 spawn-at-startup "ashell"
+spawn-at-startup "swaybg" "--image" "/etc/nixos/bethany-base/assets/wallpapers/minecraft/night-lookout.png" "-m" "fill"
 
 layout {
     gaps 8

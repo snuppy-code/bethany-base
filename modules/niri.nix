@@ -42,7 +42,7 @@
     xwayland-satellite
 
     ashell
-    # kanshi
+    swaybg
     jq
     wl-mirror
   ];

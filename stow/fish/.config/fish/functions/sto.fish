@@ -1,3 +1,3 @@
 function sto
-    stow -d /etc/nixos/bethany-base/stow -t ~ -S zed fish ssh kitty lazygit starship espanso compose niri kanshi waybar $argv
+    stow -d /etc/nixos/bethany-base/stow -t ~ -S zed fish ssh kitty lazygit starship espanso compose niri kanshi ashell $argv
 end
