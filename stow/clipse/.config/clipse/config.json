@@ -1,0 +1,9 @@
+{
+    "imageDisplay": {
+        "type": "kitty"
+    },
+    "historyFile": "$XDG_RUNTIME_DIR/clipse/clipboard_history.json",
+    "maxHistory": 20,
+    "themeFile": "custom_theme.json",
+    "tempDir": "$XDG_RUNTIME_DIR/clipse/imgs"
+}

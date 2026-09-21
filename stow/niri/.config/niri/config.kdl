@@ -48,8 +48,6 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
 
 prefer-no-csd
 
-spawn-at-startup "swaybg" "--image" "/etc/nixos/bethany-base/assets/wallpapers/minecraft/night-lookout.png" "-m" "fill"
-
 layout {
     gaps 8
     background-color "#000000"
@@ -151,6 +149,12 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
+window-rule {
+    match app-id=r#"^clipse$"#
+    open-floating true
+    default-column-width { fixed 553; }
+    default-window-height {  fixed 541; }
+}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -160,10 +164,12 @@ binds {
     // `niri msg action do-something`.
 
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Alt+V hotkey-overlay-title="Show clipboard history" {spawn "kitty" "--app-id" "clipse" "-e" "clipse";}
+    Mod+Alt+V hotkey-overlay-title="Clear clipboard history" {spawn "clipse" "-clear";}
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+L hotkey-overlay-title="Lock the Screen" { spawn "qml-crap-lockctl" "lock"; }
+    Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="Application launcher" { spawn "fuzzel"; }
+    Super+L hotkey-overlay-title="Lock the screen" { spawn "qml-crap-lockctl" "lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
