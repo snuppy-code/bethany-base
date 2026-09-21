@@ -41,7 +41,6 @@
     mako
     xwayland-satellite
 
-    ashell
     swaybg
     jq
     wl-mirror

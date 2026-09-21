@@ -25,6 +25,7 @@
           inputs.qml-crap.homeModules.default
           ../../modules-hm/qml-crap.nix
           ../../modules-hm/kanshi.nix
+          ../../modules-hm/ashell.nix
         ];
       };
     }
