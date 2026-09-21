@@ -39,6 +39,8 @@
     overskride
 
     dunst
+    brightnessctl
+    playerctl
     xwayland-satellite
 
     swaybg
