@@ -38,7 +38,7 @@
 
     overskride
 
-    mako
+    dunst
     xwayland-satellite
 
     swaybg
