@@ -52,6 +52,7 @@ spawn-at-startup "swaybg" "--image" "/etc/nixos/bethany-base/assets/wallpapers/m
 
 layout {
     gaps 8
+    background-color "#000000"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -71,15 +72,14 @@ layout {
         proportion 0.66667
     }
     default-column-width { proportion 0.5; }
-
     focus-ring {
         off
     }
     border {
         width 4
-        active-color "#8cd474"
+        active-color "#749469"
         inactive-color "#505050"
-        urgent-color "#9b0000"
+        urgent-color "#c26161"
     }
     shadow {
         on
@@ -117,6 +117,15 @@ animations {
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
+    opacity 0.78
+    draw-border-with-background false
+    background-effect {
+        xray true
+        blur true
+        // noise 0.12
+        saturation 1.2
+    }
+    // baba-is-float true
 }
 
 window-rule {
