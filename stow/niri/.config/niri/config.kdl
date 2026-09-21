@@ -149,12 +149,12 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
-window-rule {
-    match app-id=r#"^clipse$"#
-    open-floating true
-    default-column-width { fixed 553; }
-    default-window-height {  fixed 541; }
-}
+// window-rule {
+//     match app-id=r#"^clipse$"#
+//     open-floating true
+//     default-column-width { fixed 553; }
+//     default-window-height {  fixed 541; }
+// }
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -164,8 +164,8 @@ binds {
     // `niri msg action do-something`.
 
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Alt+V hotkey-overlay-title="Show clipboard history" {spawn "kitty" "--app-id" "clipse" "-e" "clipse";}
-    Mod+Alt+V hotkey-overlay-title="Clear clipboard history" {spawn "clipse" "-clear";}
+    Alt+V hotkey-overlay-title="Show clipboard history" {spawn-sh "sel=$(cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db list | fuzzel --dmenu) && printf '%s' \"$sel\" | cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db decode | wl-copy";}
+    Mod+Alt+V hotkey-overlay-title="Clear clipboard history" {spawn-sh "cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db wipe";}
 
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Application launcher" { spawn "fuzzel"; }

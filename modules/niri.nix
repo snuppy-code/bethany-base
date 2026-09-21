@@ -43,10 +43,8 @@
     brightnessctl
     playerctl
     xwayland-satellite
-    clipse
-    wl-clip-persist
+    cliphist
     wl-clipboard
-    swaybg
     jq
     wl-mirror
   ];
@@ -54,41 +52,34 @@
   # portals configured for nya already by programs.niri
 
   systemd.user.services.nya-clip-persist = {
-    enable = true;
-    path = [pkgs.wl-clip-persist];
     after = ["niri.service"];
+    partOf = ["niri.service"];
     wantedBy = ["niri.service"];
     description = "Run wl-clip-persist to have copied data usable after closing window!";
     serviceConfig = {
-      Type = "simple";
       ExecStart = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular";
       Restart = "on-failure";
     };
   };
 
-  systemd.user.services.nya-clipse = {
-    enable = true;
-    path = [pkgs.clipse pkgs.wl-clipboard];
+  systemd.user.services.nya-cliphist = {
     after = ["niri.service"];
+    partOf = ["niri.service"];
     wantedBy = ["niri.service"];
-    description = "Set up clipse!";
     serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.clipse}/bin/clipse -listen-shell";
-      RuntimeDirectory = "clipse clipse/imgs";
+      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist -db-path %t/cliphist/db store";
+      RuntimeDirectory = "cliphist";
       RuntimeDirectoryPreserve = "restart";
       Restart = "on-failure";
     };
   };
 
   systemd.user.services.nya-swaybg = {
-    enable = true;
-    path = [pkgs.swaybg];
     after = ["niri.service"];
+    partOf = ["niri.service"];
     wantedBy = ["niri.service"];
-    description = "Set up background image!";
+    description = "gives nya wallpapers";
     serviceConfig = {
-      Type = "simple";
       ExecStart = "${pkgs.swaybg}/bin/swaybg --image /etc/nixos/bethany-base/assets/wallpapers/minecraft/night-lookout.png -m fill";
       Restart = "on-failure";
     };
