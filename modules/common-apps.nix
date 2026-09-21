@@ -20,13 +20,13 @@
       gnome-font-viewer
       gnome-clocks
       qbittorrent
-      godsvg
+      # godsvg
       firefox
       (discord.override {
         withVencord = true;
       })
       gajim
-      element-desktop
+        element-desktop
       typst
       proton-vpn
       normcap
@@ -53,7 +53,7 @@
 
       postgresql # for in2010
 
-      protonplus
+      # protonplus
 
       (prismlauncher.override {
         jdks = [
@@ -63,14 +63,14 @@
           jdk25
         ];
       })
-      lutris
-      bottles
+      # lutris
+      # bottles
 
-      gnome-boxes
+      # gnome-boxes
       gparted
-      veracrypt
-      processing
-      github-desktop
+      # veracrypt
+      # processing
+      # github-desktop
     ]
     ++ [
       inputs.helium.packages.${pkgs.system}.default
