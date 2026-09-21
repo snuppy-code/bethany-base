@@ -56,7 +56,7 @@
   systemd.user.services.nya-clip-persist = {
     enable = true;
     path = [pkgs.wl-clip-persist];
-    after = ["niri.service" "nyaclipboard-dir.service"];
+    after = ["niri.service"];
     wantedBy = ["niri.service"];
     description = "Run wl-clip-persist to have copied data usable after closing window!";
     serviceConfig = {
@@ -68,8 +68,8 @@
 
   systemd.user.services.nya-clipse = {
     enable = true;
-    path = [pkgs.clipse];
-    after = ["niri.service" "nyaclipboard-dir.service" "nyaclipboard-persist.service"];
+    path = [pkgs.clipse pkgs.wl-clipboard];
+    after = ["niri.service"];
     wantedBy = ["niri.service"];
     description = "Set up clipse!";
     serviceConfig = {
