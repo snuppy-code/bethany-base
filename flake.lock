@@ -347,11 +347,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1789927072,
-        "narHash": "sha256-9pJE+7/yXFtBGDJu+82FcHglzBY6rKBdvt+gucBJeTs=",
+        "lastModified": 1790077325,
+        "narHash": "sha256-cz+Jo7xKoWw8bbnMjXYDK4hYwYwpjiWaZ+8lC0rnKQc=",
         "owner": "snuppy-code",
         "repo": "qml-crap",
-        "rev": "174e1554b379a9fb5bf16349357d04237c76c2b3",
+        "rev": "79e772fe6151abdb3e33ff17a7603c3dbfa9d124",
         "type": "github"
       },
       "original": {

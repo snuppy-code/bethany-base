@@ -84,6 +84,12 @@
     };
   };
 
+  systemd.user.services.nya-restart-espanso = {
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.systemd}/bin/systemctl --user restart espanso.service";
+    };
+  };
   services.qml-crap = {
     lock.enable = true;
     greeter = {
