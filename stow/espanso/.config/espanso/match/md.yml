@@ -1,7 +1,4 @@
 matches:
-    - trigger: ",pc"
-      replace: "```postgresql\n"
-
     - trigger: ",ll"
       replace: "[]($|$)"
 
@@ -20,6 +17,8 @@ matches:
             type: choice
             params:
                 values:
+                    - label: "catmusic"
+                      id: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif"
                     - label: "goog.."
                       id: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG54c2dtZGQwc3p6dTdhenRoNHg5M3MwZDdpNHhjZmt3NjVjaDQyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hcu9MTtCRRszQIys23/giphy.gif"
                     - label: "get jiggy with it"

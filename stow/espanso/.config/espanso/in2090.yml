@@ -1,3 +1,6 @@
 matches:
+    - trigger: ",pc"
+      replace: "```postgresql\n"
+
     - trigger: ",pq"
       replace: "postgresql"

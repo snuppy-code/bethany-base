@@ -1,20 +1,25 @@
 matches:
-    - trigger: ",xfloat"
+    - trigger: "x,flt"
       replace: "Jeg får feilmelding når jeg oppgir 37.78! Hvis du konverterer med `float( )` istedenfor `int( )` får du ikke feilmelding i det tilfellet, siden flyttall kan representere desimaltall."
-    - trigger: ",yfloat"
+    - trigger: "y,flt"
       replace: "Jeg liker at du bruker `float( )` og dermed passer på tilfellet der input har desimaler :)"
 
-    - trigger: ",xlow"
+    - trigger: "x,blt"
+      replace: "Merk at vi fort kommer til å møte på problemer hvis vi prøver å utvide koden på grunn av en liten ting som mangler. input gir tilbake str, ikke float, så når du tilordner de nye varene til ordboka, får du at noen varer har en verdi av type float, og andre (de nye) har en verdi av type str. Vi vil helst unngå denne typen blanding av typer, så det hadde vært smart å bruke `float( )` rundt `input( )` for å konvertere typen"
+
+    - trigger: "x,cas"
       replace: "Du kunne vurdert å bruke .lower() eller .upper() for å passe på at det ikke har noe å si om brukeren skriver stor eller liten bokstav !"
-    - trigger: ",ylow"
+    - trigger: "y,cas"
       replace: "Jeg liker at du bruker .lower() så det ikke har noe å si om brukeren skriver stor eller liten bokstav :)"
 
-    - trigger: ",ymel"
+    - trigger: "x,sp"
+      replace: "Jeg skulle gjerne likt å se mellomrom etter teksten din når du henter inn tekst fra brukeren, så det de skriver ikke er rett inntil spørsmålet !"
+    - trigger: "y,sp"
       replace: "Jeg liker at du har mellomrom etter teksten din når du henter inn tekst fra brukeren, så det de skriver ikke er rett inntil spørsmålet :)"
 
-    - trigger: ",xpros"
+    - trigger: "x,pro"
       replace: "Du bør unngå prosedyrer med navn med stor forbokstav (!) se gjerne notat lenger ned om hvorfor."
-    - trigger: ",npros"
+    - trigger: "n,pro"
       replace: |
           ### Om navn på prosedyrer
 
@@ -32,10 +37,9 @@ matches:
           def ost():
               print("ost")
           ```
-
-    - trigger: ",xvar"
+    - trigger: "x,var"
       replace: "Du bør unngå variabelnavn med stor forbokstav (!) se gjerne notat lenger ned om hvorfor."
-    - trigger: ",nvar"
+    - trigger: "n,var"
       replace: |
           ### Om variabelnavn
 
@@ -52,19 +56,140 @@ matches:
           hovedrett = "ja"
           ```
 
-    - trigger: ",quiz"
+    - trigger: ",t0"
+      replace: |
+          # **Quiz** - Godkjent ✅
+
+          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe! Om du sliter, husk at IN1000 har mange tilbud! F.eks. pragmatisk programmering.
+
+          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
+
+    - trigger: ",t1"
       replace: |
           # **Quiz** - ✅
 
-          8 av 8, full pott :D
+          6 av 6, full pott :D
 
           # Bestått - 🪇️🪇️
 
-          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe 😋
+          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe.
 
-          ![]()
+          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
 
-    - trigger: ",run"
+    - trigger: ",t2"
+      replace: |
+          # Hei!
+
+          +++
+
+          ## Tilbakemelding
+
+          ### **Quiz** - ✅
+
+          - 8 av 8, full pott!
+
+          ### **Oppgave 1** - ✅
+
+          -
+
+          ### **Oppgave 2** - ✅
+
+          -
+
+          ### **Oppgave 3** - ✅
+
+
+          ### **Oppgave 4** - ✅
+
+
+          ## Generelt
+
+          Godt jobba! Ta kontakt på skagel@uio.no eller Discourse hvis du lurer på noe 😋
+
+
+          ### **Bestått** - 🪇️🪇️
+
+          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
+
+    - trigger: "x,run"
       replace: "Husk å kjøre og teste programmene dine før du leverer! Arbeidet med testing og retting av feil er kanskje der du lærer aller mest, ved å rette opp i misforståelser og bli tryggere på python. Finner du ikke ut hva som er feil, skal det kommenteres i Devilry"
-    - trigger: ",2float"
-      replace: "Merk at vi fort kommer til å møte på problemer hvis vi prøver å utvide koden på grunn av en liten ting som mangler. input gir tilbake str, ikke float, så når du tilordner de nye varene til ordboka, får du at noen varer har en verdi av type float, og andre (de nye) har en verdi av type str. Vi vil helst unngå denne typen blanding av typer, så det hadde vært smart å bruke `float( )` rundt `input( )` for å konvertere typen"
+    - trigger: ",slit"
+      replace: "Om du sliter, husk at IN1000 har mange tilbud! F.eks. pragmatisk programmering."
+
+    - trigger: ",teit"
+      replace: "Ja disse oppgavene kan være litt rare noen ganger, men det kan eksamen også være, så det er god øving for eksamen om ikke annet."
+
+    - trigger: ",inn"
+      replace: "{{in}}"
+      vars:
+          - name: in
+            type: choice
+            params:
+                values:
+                    - Godt jobba, du er flink!
+                    - Dette får du til!
+                    - Dette kan du ganske godt!
+                    - Du kan mye av det viktigste!
+                    - Godt jobba, du har det viktigste fra disse ukene :D
+                    - Godt jobba! Du demonstrerer mye forståelse.
+                    - Godt jobba, du har det aller meste på plass!
+
+                    - Du har mye av det viktigste på plass! Se tilbakemeldingene under.
+
+                    - Godt jobba, du kan dette ganske godt, men det er viktig at du leser oppgavene nøye!
+                    - Dette får du til, husk bare å lese oppgavene nøye !
+                    - Du har det viktigste på plass! Husk å lese oppgavene nøye!
+
+                    - Du har det viktigste på plass! Se tilbakemeldingene under for noen presiseringer.
+
+                    - Godt jobba! Foreslår at du ser på prosedyrer. Se tilbakemelding under.
+
+                    - Godt jobba, du har gjort mye bra arbeid, men du er ikke helt i mål. Jeg gir nytt forsøk med 4 virkedagers utsettelse!
+                    - Godt jobba, du er flink, du må bare lese oppgaven litt mer forsiktig! Jeg gir nytt forsøk og 4 virkedagers utsettelse!
+                    - Det kan se ut som om du har løst oppgavene, men jeg kan ikke rette de siden du ikke har lastet opp alle filene. Jeg gir nytt forsøk og 4 virkedagers utsettelse!
+
+    - trigger: ",qu"
+      replace: "{{qu}}"
+      vars:
+          - name: qu
+            type: choice
+            params:
+                values:
+                    - 6 av 6, full pott :D
+                    - 5 av 6, det er ikke ille!
+                    - 4 av 6, ikke værst!
+
+    - trigger: ",for1"
+      replace: "Går det ann å skrive dette enklere med en for-løkke uten å bruke len(), range(), eller indeksering ?"
+    - trigger: ",for2"
+      replace: "for-løkke kan ikke brukes når vi ikke vet antall nødvendige steg (og det ikke er utledbart fra kjente kvantiteter f.eks. lengde på en liste med fast innhold)."
+    - trigger: ",st3"
+      replace: "Ser ut som om du hoppet over, eller leste steg 3 litt fort! Husk å lese oppgavene nøye!"
+    - trigger: ",er1"
+      replace: "Hadde det vært mulig å la bruker prøve igjen uten å restarte programmet, til de skriver gyldige indekser?"
+    - trigger: ",er2"
+      replace: "`try` tror jeg muligens ikke er direkte pensum i IN1000, og uten det blir det litt vanskelig å håndtere mange feil. Men en feil som kan håndteres er hvis bruker skriver en nøkkel som ikke tilsvarer en verdi i samlingen. Vi kan sjekke dette (f.eks. hvis samlingen er en liste, ved å sjekke mindre enn, større enn, eller hvis samlingen er en ordbok, ved å sjekke om det brukeren oppga er i mengden av nøkler) og la de prøve på nytt til det er gyldig, ved bruk av en while-løkke."
+
+    - trigger: ",konv"
+      replace: "Unødvendig å eksplisitt konvertere resultat av input (en str) til str :p"
+    - trigger: ",cont"
+      replace: "En ting du kan gjøre for å slippe å holde styr på ferdig-variabelen, er å duplisere linjene der du henter input, ut til før while-løkka, og ha selve while-sjekken sjekke det du nå sjekker for å sette ferdig-variabelen."
+    - trigger: ",ind"
+      replace: "Du har et indentasjonsfeil som gjør at koden ikke funker på måten du forventer, og funker av tilfeldighet !"
+
+    - trigger: ",tolk"
+      replace: "Et generelt tips om du er usikker på tolkningen av en oppgave: Lag en kommentar i programmet der du beskriver alternative tolkninger. Skriv hvilken du velger og gjerne hvorfor. Løs oppgaven basert på dette."
+    - trigger: ",tatt"
+      replace: 'Merk at du kan få noen utilsiktede effekter når du bruker `sum` som variabelnavn, fordi sum() er en operasjon man kan gjøre på bl.a. lister i python. Det er bedre å bruke et navn som ikke er "tatt", slik som f.eks. `summen` :)'
+
+    - trigger: ",idx"
+      replace: "Det hadde vært litt enklere å skrive for-løkken med `range(len(tastet_inn_tall))`, så slipper du å holde styr på `indeks` selv! Generelt hvis du merker at du holder styr på din egen indeks for noe i en for-løkke, er det et tegn på at det kanskje bør implementeres på en annen måte."
+
+    - trigger: ",com"
+      replace: 'Det er bra at du kommenterer koden din! For å skrive enda bedre kommentarer foreslår jeg at du skriver mindre om "hva" som skjer (det kan man jo lese fra koden!) og mer om hvorfor, altså dine intensjoner mens du skrev koden. Ting en ikke får ut av å lese koden. F.eks. `# skriver ut tallene i listen` over en print-statement tilføyer ikke noe ukjent :p'
+
+    - trigger: ",ii"
+      replace: 'Foreslår å unngå navnet "i" for variabler i for-løkker som representerer alt annet enn indekser. Det er veldig vanlig stil å kalle variabelen "i" for indekser (0,1,2,3...) og "v" for verdier (f.eks. 9,2,20,-3,49,...). Dette kan være forvirrende for andre som leser koden.'
+
+    - trigger: ",dev"
+      replace: "Husk å svare på spørsmålene i devilry neste gang!"

@@ -1,0 +1,9 @@
+matches:
+  - regex: "/(?P<name>.*);"
+    replace: "/{{name}}/.config/{{name}}/"
+  - regex: ";(?P<name>.*);"
+    replace: "{{name}}/.config/{{name}}/"
+  - trigger: ",beth"
+    replace: "/etc/nixos/bethany-base/"
+  - trigger: ",term"
+    replace: "/etc/nixos/terminal-dogma/"
