@@ -12,8 +12,6 @@
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service, explicitly enable
   environment.systemPackages = with pkgs; [
-    fuzzel
-
     nautilus
 
     engrampa
@@ -42,6 +40,7 @@
     dunst
     brightnessctl
     playerctl
+    fuzzel
     xwayland-satellite
     cliphist
     wl-clipboard

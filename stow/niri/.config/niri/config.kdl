@@ -120,7 +120,7 @@ window-rule {
     background-effect {
         xray true
         blur true
-        // noise 0.12
+        noise 0.08
         saturation 1.2
     }
     // baba-is-float true
@@ -137,6 +137,11 @@ window-rule {
 
 window-rule {
     match app-id=r#"^org\.gnome\.Decibels$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^Espanso\.SyncTool$"#
     open-floating true
 }
 
@@ -164,7 +169,7 @@ binds {
     // `niri msg action do-something`.
 
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Alt+V hotkey-overlay-title="Show clipboard history" {spawn-sh "sel=$(cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db list | fuzzel --dmenu) && printf '%s' \"$sel\" | cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db decode | wl-copy";}
+    Alt+V hotkey-overlay-title="Show clipboard history" {spawn-sh "sel=$(cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db list | fuzzel --dmenu --with-nth 2) && printf '%s' \"$sel\" | cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db decode | wl-copy";}
     Mod+Alt+V hotkey-overlay-title="Clear clipboard history" {spawn-sh "cliphist -db-path $XDG_RUNTIME_DIR/cliphist/db wipe";}
 
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
