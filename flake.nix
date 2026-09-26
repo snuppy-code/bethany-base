@@ -2,10 +2,9 @@
   description = ":3c";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nvf.url = "github:notashelf/nvf";
@@ -16,7 +15,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:nix-community/stylix/release-26.05";
+    stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
     slon.url = "github:snuppy-code/slon";
@@ -27,11 +26,9 @@
     qml-crap.url = "github:snuppy-code/qml-crap";
     qml-crap.inputs.nixpkgs.follows = "nixpkgs";
   };
-
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     nvf,
     nix-flatpak,

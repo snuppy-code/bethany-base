@@ -11,7 +11,7 @@
     vista-fonts
     corefonts
     liberation_ttf
-    vazir-fonts
+    vazirmatn
     fira-code
     fira-code-symbols
     #droid-sans-mono

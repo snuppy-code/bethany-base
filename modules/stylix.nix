@@ -43,7 +43,7 @@
     # https://github.com/Adapta-Projects/Papirus-Nord          papirus-nord
     # https://github.com/madmaxms/iconpack-obsidian            iconpack-obsidian
     # https://github.com/vinceliuice/Fluent-icon-theme         fluent-icon-theme
-    iconTheme = {
+    icons = {
       enable = true;
       # package = pkgs.papirus-icon-theme;
       # dark = "Papirus-Dark";

@@ -32,7 +32,7 @@
       normcap
       anki
       pdfpc
-      libreoffice-still # should be gtk
+      libreoffice # should be gtk
       obsidian
       nextcloud-client
       solaar
