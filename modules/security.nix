@@ -8,6 +8,11 @@
     Defaults timestamp_timeout=0.5 # 0.5m, i.e. 30s
   ";
 
+  environment.systemPackages = with pkgs; [
+        age
+        age-plugin-yubikey
+    ];
+
   security.pam.services.sudo.rssh = true;
   security.pam.rssh.enable = true;
   security.pam.rssh.settings = let
