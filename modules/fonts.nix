@@ -18,6 +18,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    inter
 
     nerd-fonts._0xproto
     nerd-fonts.jetbrains-mono
