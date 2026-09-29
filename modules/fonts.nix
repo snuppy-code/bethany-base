@@ -19,6 +19,11 @@
     dina-font
     proggyfonts
     inter
+    gyre-fonts
+    tex-gyre-math.pagella
+    ibm-plex
+    hanken-grotesk
+    newcomputermodern
 
     nerd-fonts._0xproto
     nerd-fonts.jetbrains-mono
