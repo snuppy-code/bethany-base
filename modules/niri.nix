@@ -18,7 +18,7 @@
     file-roller
     peazip
 
-    lite-xl
+    pragtical
 
     oculante
     # loupe # oculante is fine and has extra cool stuff
