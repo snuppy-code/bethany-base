@@ -25,6 +25,8 @@
       (discord.override {
         withVencord = true;
       })
+      dissent
+      discordo
       gajim
       element-desktop
       typst

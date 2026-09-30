@@ -15,6 +15,7 @@
     btop
     tree
     bat
+    yazi
     caligula
     wl-clipboard
     delta
@@ -23,6 +24,7 @@
     fd
     lnav
     python314
+    b3sum
     plocate
     killall
     file
