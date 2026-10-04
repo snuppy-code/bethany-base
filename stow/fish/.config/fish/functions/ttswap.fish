@@ -12,7 +12,7 @@ Usage: ttswap dark/light"
     if test "$argv[1]" = dark
         python /etc/nixos/bethany-base/termtheme/termthemer.py dark
         kitten theme catppuccin-macchiato
-        yes | fish_config theme save tomorrow-night-bright
+        yes | fish_config theme save "volcanic shale deep"
 
     else if test "$argv[1]" = light
         python /etc/nixos/bethany-base/termtheme/termthemer.py light
