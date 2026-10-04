@@ -48,6 +48,7 @@
       krita
       aseprite
       xournalpp
+      rnote
       blender
       obs-studio
       audacity
