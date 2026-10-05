@@ -98,7 +98,7 @@
       displayName = "Frøya";
       wallpaper = ../assets/wallpapers/minecraft/tree-sunset.png;
       avatar = ../assets/avatar/pfp_maki.png;
-      kanshi.configFile = ../stow/kanshi/.config/kanshi/config;
+      kanshi.configFile = ../hosts/${config.networking.hostName}/stow/kanshi/.config/kanshi/config;
       keyboard.layout = "us";
     };
   };
