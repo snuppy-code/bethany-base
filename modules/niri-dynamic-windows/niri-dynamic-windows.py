@@ -93,6 +93,8 @@ def send(request):
 
 def float(id: int):
     send({"Action": {"MoveWindowToFloating": {"id": id}}})
+    send({"Action": {"SetWindowWidth": {"id": id, "change": {"SetFixed": 433}}}})
+    send({"Action": {"SetWindowHeight": {"id": id, "change": {"SetFixed": 566}}}})
 
 
 def update_matched(win):
