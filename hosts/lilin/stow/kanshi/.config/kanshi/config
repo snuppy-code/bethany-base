@@ -1,6 +1,6 @@
 output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
     mode 2560x1440@143.912
-    alias $NYAMONITOR
+    alias $OLDNYAMONITOR
 }
 
 output eDP-1 {
@@ -13,7 +13,7 @@ profile undocked {
 }
 profile home {
     output $LILINSCREEN disable
-    output $NYAMONITOR enable
+    output $OLDNYAMONITOR enable
 }
 profile out {
     output $LILINSCREEN enable
