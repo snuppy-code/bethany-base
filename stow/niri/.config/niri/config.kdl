@@ -46,6 +46,13 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
     scale 1
 }
 
+output "ASUSTek COMPUTER INC PG32UCWM W7LMAS004296" {
+    mode "3840x2160@240.016"
+    transform "normal"
+    //1.0 1.2 1.25 1.3333 1.5 1.6 2.0
+    scale 1.25
+}
+
 prefer-no-csd
 
 layout {
