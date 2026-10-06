@@ -38,17 +38,13 @@ input {
 output "eDP-1" {
     mode "3000x1876@120.001"
     scale 1.5 // 1.5, 150%
-    transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
 }
 output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
     mode "2560x1440@143.912"
-    transform "normal"
     scale 1
 }
-
 output "ASUSTek COMPUTER INC PG32UCWM W7LMAS004296" {
     mode "3840x2160@240.016"
-    transform "normal"
     //1.0 1.2 1.25 1.3333 1.5 1.6 2.0
     scale 1.25
 }

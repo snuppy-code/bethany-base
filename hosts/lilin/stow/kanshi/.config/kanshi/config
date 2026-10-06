@@ -2,7 +2,10 @@ output "Philips Consumer Electronics Company 27M2C5500W AU02307000447" {
     mode 2560x1440@143.912
     alias $OLDNYAMONITOR
 }
-
+output "ASUSTek COMPUTER INC PG32UCWM W7LMAS004296" {
+    mode 3840x2160@240.016
+    alias $NYAMONITOR
+}
 output eDP-1 {
     mode 3000x1876@120.001
     alias $LILINSCREEN
@@ -12,6 +15,10 @@ profile undocked {
     output $LILINSCREEN enable
 }
 profile home {
+    output $LILINSCREEN disable
+    output $NYAMONITOR enable
+}
+profile oldhome {
     output $LILINSCREEN disable
     output $OLDNYAMONITOR enable
 }
