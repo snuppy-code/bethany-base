@@ -17,7 +17,7 @@
     ../../common-modules.nix
     ../../modules/niri.nix
     ../../modules/niri-dynamic-windows
-    ../../modules/coolercontrol.nix
+    # ../../modules/coolercontrol.nix
     {
       home-manager.users.snuppy = {
         imports = [
