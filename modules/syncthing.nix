@@ -38,7 +38,7 @@
     guiPasswordFile = config.sops.secrets.syncthing-password.path;
     settings = {
       gui = {
-        user = "petrova";
+        user = "snuppy";
       };
       devices = {
         # don't create this entry if we are this device
