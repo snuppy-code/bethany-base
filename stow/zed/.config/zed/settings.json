@@ -287,7 +287,14 @@
           }
         },
         "disable_ai": true,
-        "show_completions_on_input": true
+        "show_completions_on_input": true,
+        "languages": {
+          "Python": {
+            "inlay_hints": {
+              "enabled": false
+            }
+          }
+        }
       }
     },
     "present": {
