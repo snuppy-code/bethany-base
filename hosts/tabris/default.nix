@@ -18,6 +18,7 @@
     ../../modules/niri.nix
     ../../modules/niri-dynamic-windows
     # ../../modules/coolercontrol.nix
+    # ../../modules/syncthing.nix
     {
       home-manager.users.snuppy = {
         imports = [
@@ -26,6 +27,8 @@
           inputs.qml-crap.homeModules.default
           ../../modules-hm/qml-crap.nix
           ../../modules-hm/ashell.nix
+          ../../modules-hm/syncthing.nix
+          ../../modules-hm/sops.nix
         ];
       };
     }

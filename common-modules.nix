@@ -35,7 +35,7 @@
     {
       home-manager.users.snuppy = {
         imports = [
-          inputs.sops-nix.homeManagerModule
+          inputs.sops-nix.homeManagerModules.sops
           ./modules-hm/home-manager.nix
           ./modules-hm/stylix.nix
           ./modules-hm/common-apps.nix
