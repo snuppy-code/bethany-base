@@ -25,6 +25,7 @@
     fd
     lnav
     python314
+    sshfs
     b3sum
     plocate
     killall
