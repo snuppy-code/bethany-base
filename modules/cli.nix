@@ -17,6 +17,7 @@
     bat
     yazi
     caligula
+    tmux
     wl-clipboard
     delta
     fzf
