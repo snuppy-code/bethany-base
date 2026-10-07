@@ -56,60 +56,22 @@ matches:
           hovedrett = "ja"
           ```
 
-    - trigger: ",t0"
-      replace: |
-          # **Quiz** - Godkjent ✅
-
-          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe! Om du sliter, husk at IN1000 har mange tilbud! F.eks. pragmatisk programmering.
-
-          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
-
-    - trigger: ",t1"
-      replace: |
-          # **Quiz** - ✅
-
-          6 av 6, full pott :D
-
-          # Bestått - 🪇️🪇️
-
-          Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe.
-
-          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
-
-    - trigger: ",t2"
-      replace: |
-          # Hei!
-
-          +++
-
-          ## Tilbakemelding
-
-          ### **Quiz** - ✅
-
-          - 8 av 8, full pott!
-
-          ### **Oppgave 1** - ✅
-
-          -
-
-          ### **Oppgave 2** - ✅
-
-          -
-
-          ### **Oppgave 3** - ✅
-
-
-          ### **Oppgave 4** - ✅
-
-
-          ## Generelt
-
-          Godt jobba! Ta kontakt på skagel@uio.no eller Discourse hvis du lurer på noe 😋
-
-
-          ### **Bestått** - 🪇️🪇️
-
-          [](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFlbWVja3VtMXRuc2drdWY0bmQxdWxvNm9sdzFkeDBqbHMxZmFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gpGQC7puVCCUpMjV9i/giphy.gif)
+    - trigger: ",tt"
+      replace: "{{output}}"
+      vars:
+          - name: form1
+            type: form
+            params:
+                layout: "Oppgaver gjort (f.eks. q,1,2,6): [[tasks]]"
+          - name: output
+            type: script
+            params:
+                args:
+                    - /run/current-system/sw/bin/python
+                    - "%CONFIG%/scripts/generate_template.py"
+                    #- "--oblig_nr"
+                    #- "5"
+                    - "{{form1.tasks}}"
 
     - trigger: "x,run"
       replace: "Husk å kjøre og teste programmene dine før du leverer! Arbeidet med testing og retting av feil er kanskje der du lærer aller mest, ved å rette opp i misforståelser og bli tryggere på python. Finner du ikke ut hva som er feil, skal det kommenteres i Devilry"
@@ -135,7 +97,7 @@ matches:
                     - Godt jobba, du har det aller meste på plass!
 
                     - Du har mye av det viktigste på plass! Se tilbakemeldingene under.
-
+                    - Godt jobba, du demonstrerer mye viktig forståelse! Jeg tror muligens du bør øve mer på x. Se større tilbakemelding under.
                     - Godt jobba, du kan dette ganske godt, men det er viktig at du leser oppgavene nøye!
                     - Dette får du til, husk bare å lese oppgavene nøye !
                     - Du har det viktigste på plass! Husk å lese oppgavene nøye!
@@ -155,9 +117,12 @@ matches:
             type: choice
             params:
                 values:
-                    - 6 av 6, full pott :D
-                    - 5 av 6, det er ikke ille!
-                    - 4 av 6, ikke værst!
+                    - "6 av 6, full pott :D"
+                    - "6/6! Full pott!"
+                    - "5 av 6, det er ikke ille!"
+                    - "5/6 er bra!"
+                    - "4 av 6, ikke værst!"
+                    - "4/6 er ikke ille!"
 
     - trigger: ",for1"
       replace: "Går det ann å skrive dette enklere med en for-løkke uten å bruke len(), range(), eller indeksering ?"
@@ -186,10 +151,28 @@ matches:
       replace: "Det hadde vært litt enklere å skrive for-løkken med `range(len(tastet_inn_tall))`, så slipper du å holde styr på `indeks` selv! Generelt hvis du merker at du holder styr på din egen indeks for noe i en for-løkke, er det et tegn på at det kanskje bør implementeres på en annen måte."
 
     - trigger: ",com"
-      replace: 'Det er bra at du kommenterer koden din! For å skrive enda bedre kommentarer foreslår jeg at du skriver mindre om "hva" som skjer (det kan man jo lese fra koden!) og mer om hvorfor, altså dine intensjoner mens du skrev koden. Ting en ikke får ut av å lese koden. F.eks. `# skriver ut tallene i listen` over en print-statement tilføyer ikke noe ukjent :p'
+      replace: 'Det er bra at du kommenterer koden din! For å skrive enda bedre kommentarer foreslår jeg at du skriver mindre om "hva" som skjer (det kan man jo lese fra koden!) og mer om hvorfor, altså dine intensjoner og tanker mens du skrev koden. Ting en ikke får ut av å lese koden. F.eks. `# skriver ut tallene i listen` over en print-statement tilføyer ikke noe ukjent :p'
 
     - trigger: ",ii"
       replace: 'Foreslår å unngå navnet "i" for variabler i for-løkker som representerer alt annet enn indekser. Det er veldig vanlig stil å kalle variabelen "i" for indekser (0,1,2,3...) og "v" for verdier (f.eks. 9,2,20,-3,49,...). Dette kan være forvirrende for andre som leser koden.'
 
     - trigger: ",dev"
       replace: "Husk å svare på spørsmålene i devilry neste gang!"
+    - trigger: ",tfk"
+      replace: "x skriver ut, heller enn å returnere. Tips: Det er ikke bare når vi ser \"returner\" i oppgaveteksten at vi vet vi må gjøre det - \"skriv en funksjon..\" vil også si at noe skal returneres."
+    - trigger: "y,stf"
+      replace: "Du utfører god praksis når du stenger filer etter du er ferdig med de i funksjonene, bra!"
+    - trigger: "x,stf"
+      replace: "Husk for hver fil du åpnet med `open` at så snart du er ferdig å lese fra den må du stenge den med `close()`! Dette er god praksis og kan hindre at du har problemer senere i koden din."
+    - trigger: "x,navn"
+      replace: "Noen endringer til noen av navnene kan gjøre koden mer leselig, f.eks. er det ikke åpenbart fra navnet hva `siste_prosedyre` gjør, eller at `nye_rekorder_2018` parameteren dens er navnet på filen den skriver til."
+    - trigger: "y,ass"
+      replace: "Jeg syns du har god bruk av asserts!"
+    - trigger: ",un"
+      replace: "Tips: Når du ikke bruker variabelen fra en for-løkke (eller liknende) er det vanlig konvensjon å navngi den `_`."
+    - trigger: "x,rl"
+      replace: "Helst skulle koden vært i samme mappe som filene, og lest filene fra samme mappe den *kjøres* fra! Dette gjør det lettere for retterne, siden mappestruktur kan være unik per student. Dersom terminalen din sin \"working directory\" (synlig med `pwd`) er den mappa som csv-filene er i, kunne du åpnet de i koden med bare `open(\"filen.csv\")`. Når du kjører programmet direkte fra vscode kjøres det antakeligvis fra den ytterste mappen du har åpen i vscode."
+    - trigger: ",stvl"
+      replace: "Tips: Når du setter en variabel til en startverdi med intensjon av å overskrive den, (f.eks. du setter `maks_temp = -100`) er det ofte smartere å sette den lik `None` og tilordne hva enn den første verdien er, til den. Altså ha en linje som `if maks_temp is None:` der du tilordner uten noen andre krav. Da slipper du at hvis det plutselig finnes en måling på -101 så får du problemer!"
+    - trigger: ",ofgg"
+      replace: "Når jeg skriver `hei hei Hei på deg` får jeg ordet \"hei\" opp to ganger, og ordet \"Hei\" opp en gang. Hadde det vært mulig å bare inkludere et ord en gang i listen, uansett hvor mange ganger bruker skrev det, og uansett versal?"
