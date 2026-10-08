@@ -24,7 +24,7 @@
         # don't create this entry if we are this device
         "lilin" = lib.mkIf (nixosConfig.networking.hostName != "lilin") {
           autoAcceptFolders = false;
-          id = "OVGAC56-JAINDBQ-22XQHV3-JZKGERO-BDWNAYJ-P2EBMJN-AHJTUDT-5D54DQK";
+          id = "XVUBQ3S-EE4I3UX-HVDP4HP-CZC55YD-QZJKZHT-EDIUKAD-ZCAYTPE-V42YLQD";
           name = "lilin";
         };
         # don't create this entry if we are this device
