@@ -26,6 +26,8 @@
           ../../modules-hm/qml-crap.nix
           ../../modules-hm/kanshi.nix
           ../../modules-hm/ashell.nix
+          ../../modules-hm/syncthing.nix
+          ../../modules-hm/sops.nix
         ];
       };
     }
