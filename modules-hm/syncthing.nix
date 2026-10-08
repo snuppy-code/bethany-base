@@ -59,8 +59,6 @@
           ignorePatterns = [
             "workspace.json"
             "workspace-mobile.json"
-            "community-plugins.json"
-            "appearance.json"
           ];
           devices = lib.lists.remove nixosConfig.networking.hostName [
             "lilin"
@@ -77,8 +75,6 @@
           ignorePatterns = [
             "workspace.json"
             "workspace-mobile.json"
-            "community-plugins.json"
-            "appearance.json"
           ];
           devices = lib.lists.remove nixosConfig.networking.hostName [
             "lilin"
