@@ -5,9 +5,20 @@
   lib,
   nixosConfig,
   ...
-}: {
+}: let
+  ignorePatterns = [
+    "workspace.json"
+    "workspace-mobile.jsn"
+  ];
+  stignore = (lib.concatStringsSep "\n" ignorePatterns) + "\n";
+in {
   sops.secrets.syncthing-password = {
     path = "${config.sops.defaultSymlinkPath}/syncthing-password";
+  };
+
+  home.file = {
+    "sync/sol/.stignore".text = stignore;
+    "sync/eri/.stignore".text = stignore;
   };
 
   services.syncthing = {
@@ -56,10 +67,6 @@
           id = "nerjd-lbvyj";
           path = "/home/snuppy/sync/sol/";
           ignorePerms = true;
-          ignorePatterns = [
-            "workspace.json"
-            "workspace-mobile.json"
-          ];
           devices = lib.lists.remove nixosConfig.networking.hostName [
             "lilin"
             "tabris"
@@ -72,10 +79,6 @@
           id = "7uig4-rufph";
           path = "/home/snuppy/sync/eri/";
           ignorePerms = true;
-          ignorePatterns = [
-            "workspace.json"
-            "workspace-mobile.json"
-          ];
           devices = lib.lists.remove nixosConfig.networking.hostName [
             "lilin"
             "tabris"
