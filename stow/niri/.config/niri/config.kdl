@@ -115,19 +115,83 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
 
 animations {
-    // off
     slowdown 1.1
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+        // curve "ease-out-cubic"
+        // curve "ease-out-expo"
+        // curve "linear"
+        // curve "cubic-bezier" 0.05 0.7 0.1 1
+        // curve "cubic-bezier" 0.28 0.56 0.8 0.49
+    }
+    //  workspace-switch {
+    //     spring damping-ratio=0.85 stiffness=1000 epsilon=0.001
+    // }
+
+     window-open {
+        duration-ms 500
+        curve "ease-out-cubic"
+        custom-shader r"
+
+            vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+                float p = niri_clamped_progress;
+                vec2 uv = coords_geo.xy;
+                float strength = 0.6;
+                float PI = 3.141592653589793;
+
+                vec3 tc = niri_geo_to_tex * vec3(uv, 1.0);
+                vec4 win = texture2D(niri_tex, tc.st);
+
+                float to_m = p + sin(PI * p) * strength;
+                vec4 mixed = vec4(
+                    win.r * win.a * to_m,
+                    win.g * win.a * to_m,
+                    win.b * win.a * to_m,
+                    win.a * p
+                );
+
+                return mixed;
+            }
+"
+  }
+
+    window-close {
+        duration-ms 500
+        curve "ease-out-cubic"
+        custom-shader r"
+            vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+                float p = 1.0 - niri_clamped_progress;
+                vec2 uv = coords_geo.xy;
+                float strength = 0.6;
+                float PI = 3.141592653589793;
+
+                vec3 tc = niri_geo_to_tex * vec3(uv, 1.0);
+                vec4 win = texture2D(niri_tex, tc.st);
+
+                float to_m = p + sin(PI * p) * strength;
+                vec4 mixed = vec4(
+                    win.r * win.a * to_m,
+                    win.g * win.a * to_m,
+                    win.b * win.a * to_m,
+                    win.a * p
+                );
+
+                return mixed;
+            }
+"
+    }
 }
 
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
-    opacity 0.78
+    opacity 0.79
     draw-border-with-background false
     background-effect {
         xray true
         blur true
-        noise 0.08
+        // noise 0.08
         saturation 1.2
     }
     // baba-is-float true
@@ -189,11 +253,6 @@ binds {
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Application launcher" { spawn "fuzzel"; }
     Alt+L hotkey-overlay-title="Lock the screen" { spawn "qml-crap-lockctl" "lock"; }
-
-    // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
-    // For example, this is a standard bind to toggle the screen reader (orca).
-    Mod+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -410,8 +469,8 @@ binds {
     // * adjust width as a percentage of screen width: "-10%" or "+10%"
     // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
     // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+Minus { set-column-width "-5%"; }
+    Mod+Equal { set-column-width "+5%"; }
 
     // Finer height adjustments when in column with other windows.
     Mod+Shift+Minus { set-window-height "-10%"; }
@@ -435,6 +494,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Mod+Shift+S { screenshot; }
+    Mod+Alt+S { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -449,7 +509,4 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-
-    // to turn back on, jiggle mouse
-    Mod+Shift+P { power-off-monitors; }
 }
