@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   inputs,
   ...
 }: {
@@ -36,7 +37,6 @@
       pdfpc
       libreoffice-still # should be gtk
       obsidian
-      nextcloud-client
       solaar
       qalculate-qt
       spotify
@@ -78,5 +78,6 @@
     ++ [
       inputs.helium.packages.${pkgs.system}.default
       inputs.slon.packages.${pkgs.system}.default
+      pkgs-unstable.nextcloud-client
     ];
 }

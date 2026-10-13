@@ -44,10 +44,12 @@
     nya = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages."${nya}";
+    pkgs-unstable = nixpkgs-unstable.legacyPackages."${nya}";
   in {
     nixosConfigurations.lilin = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
+        pkgs-unstable = pkgs-unstable;
       };
       modules = [
         ./hosts/lilin
