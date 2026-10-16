@@ -417,6 +417,9 @@
         },
         "disable_ai": true,
         "show_completions_on_input": false,
+        "inlay_hints": {
+          "enabled": false
+        },
         "languages": {
           "Python": {
             "enable_language_server": false
