@@ -95,13 +95,12 @@ god = {
                 "frist": (temp := datetime.date(2026, 10, 20)),
                 "rettefrist": temp + datetime.timedelta(days=7),
                 "problems": {
-                    1: "",
-                    2: "",
-                    3: "",
-                    4: "",
+                    1: "Teorispørsmål",
+                    2: "Klassen *Film*",
+                    3: "Klassen *Filmklubb*",
                 },
                 "quiz": True,
-                "gif_url": None,
+                "gif_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG54c2dtZGQwc3p6dTdhenRoNHg5M3MwZDdpNHhjZmt3NjVjaDQyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Hcu9MTtCRRszQIys23/giphy.gif",
             },
             8: {
                 "relevant_weeks": (10, 11),
@@ -181,7 +180,7 @@ if (
 oppgaver_text = ""
 for number, title in this_oblig["problems"].items():
     if number in tasks_done:
-        oppgaver_text += f"\n### Oppgave {number} - {title}\n\n+++\n"
+        oppgaver_text += f"\n### **Oppgave {number}** - {title}\n\n+++\n"
 
 quiz_tekst = "### **Quiz** - "
 if quiz_done:
@@ -205,7 +204,16 @@ Godt jobba! Ta kontakt på skagel@uio.no eller Discourse hvis du lurer på noe.
 
 ### **Bestått** - 🪇️🪇️
 
-[]({this_oblig["gif_url"]})
+![]({this_oblig["gif_url"]})
+"""
+
+if len(oppgaver_text) == 0 and quiz_done:
+    out = f"""
+# **Quiz** - Godkjent ✅
+
+## **Generelt**
+
+Ta gjerne kontakt på skagel@uio.no eller Discourse hvis du lurer på noe!
 """
 
 print(out)
