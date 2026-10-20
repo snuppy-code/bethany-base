@@ -59,6 +59,7 @@
     nixosConfigurations.tabris = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
+        pkgs-unstable = pkgs-unstable;
       };
       modules = [
         ./hosts/tabris

@@ -30,6 +30,9 @@
       discordo
       gajim
       element-desktop
+      (signal-desktop.override {
+        commandLineArgs = "--password-store=\"gnome-libsecret\"";
+      })
       typst
       proton-vpn
       normcap
