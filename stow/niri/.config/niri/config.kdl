@@ -186,13 +186,13 @@ animations {
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
-    opacity 0.79
+    // opacity 0.79
     draw-border-with-background false
     background-effect {
-        xray true
-        blur true
+        // xray true
+        // blur true
         // noise 0.08
-        saturation 1.2
+        // saturation 1.2
     }
     // baba-is-float true
 }
@@ -210,7 +210,6 @@ window-rule {
     match app-id=r#"^org\.gnome\.Decibels$"#
     open-floating true
 }
-
 window-rule {
     match app-id=r#"^Espanso\.SyncTool$"#
     open-floating true
