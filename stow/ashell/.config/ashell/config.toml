@@ -2,10 +2,12 @@ position = "Top"
 outputs = "All"
 
 [modules]
-left = [ [ "Updates", "Workspaces" ] ]
-center = [ "WindowTitle","Tempo","MediaPlayer" ]
-right = [ "SystemInfo", [ "Tray", "Privacy", "Settings" ] ]
+left = [ [ "Workspaces","WindowTitle" ] ]
+center = [ "KeyboardLayout","Tempo","MediaPlayer" ]
+right = [ "SystemInfo", "Tray", ["Privacy", "Settings" ] ]
 
 [settings]
 logout_cmd = "niri msg action quit -s"
-battery_format = "IconAndPercentage"
+hibernate_cmd = "systemctl hibernate"
+battery_format = "IconAndPercentageAndTime"
+
