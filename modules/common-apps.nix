@@ -82,5 +82,6 @@
       inputs.helium.packages.${pkgs.system}.default
       inputs.slon.packages.${pkgs.system}.default
       pkgs-unstable.nextcloud-client
+      pkgs-unstable.sable
     ];
 }
