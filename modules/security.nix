@@ -9,9 +9,9 @@
   ";
 
   environment.systemPackages = with pkgs; [
-        age
-        age-plugin-yubikey
-    ];
+    age
+    age-plugin-yubikey
+  ];
 
   security.pam.services.sudo.rssh = true;
   security.pam.rssh.enable = true;
