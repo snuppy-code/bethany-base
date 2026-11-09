@@ -23,9 +23,7 @@
       qbittorrent
       # godsvg
       firefox
-      (discord.override {
-        withVencord = true;
-      })
+      vesktop
       dissent
       discordo
       gajim
