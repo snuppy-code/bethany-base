@@ -11,6 +11,7 @@ god = {
                 "relevant_weeks": (1,),
                 "frist": (temp := datetime.date(2026, 8, 25)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     0: "Filsystem og kjøring av Python-programmer",
                     1: "Utskrift og innlesing med variabler",
@@ -23,6 +24,7 @@ god = {
                 "relevant_weeks": (2,),
                 "frist": (temp := datetime.date(2026, 9, 1)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Utskriftsprosedyre",
                     2: "Konvertering",
@@ -37,6 +39,7 @@ god = {
                 "relevant_weeks": (3,),
                 "frist": (temp := datetime.date(2026, 9, 8)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Lister",
                     2: "Samling",
@@ -51,6 +54,7 @@ god = {
                 "relevant_weeks": (4,),
                 "frist": (temp := datetime.date(2026, 9, 15)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Regning med løkker",
                     2: "Reiseplan",
@@ -64,6 +68,7 @@ god = {
                 "relevant_weeks": (5, 6),
                 "frist": (temp := datetime.date(2026, 9, 29)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Parametre og returverdier",
                     2: "Å telle bokstaver og ord",
@@ -79,6 +84,7 @@ god = {
                 "relevant_weeks": (7,),
                 "frist": (temp := datetime.date(2026, 10, 6)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Motorsykkel",
                     2: "Teorioppgave",
@@ -94,6 +100,7 @@ god = {
                 "relevant_weeks": (8, 9),
                 "frist": (temp := datetime.date(2026, 10, 20)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "nummererte-oppgaver",
                 "problems": {
                     1: "Teorispørsmål",
                     2: "Klassen *Film*",
@@ -106,14 +113,18 @@ god = {
                 "relevant_weeks": (10, 11),
                 "frist": (temp := datetime.date(2026, 11, 3)),
                 "rettefrist": temp + datetime.timedelta(days=7),
+                "problemtype": "implementer-filer",
                 "problems": {
-                    1: "",
-                    2: "",
-                    3: "",
-                    4: "",
+                    1: "celle.py",
+                    2: "rutenett.py",
+                    3: "verden.py",
+                    4: "test_celle.py",
+                    5: "test_rutenett.py",
+                    6: "test_verden.py",
+                    7: "hovedprogram.py",
                 },
                 "quiz": True,
-                "gif_url": None,
+                "gif_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWpwZGQ0d2N4ZnY5NDhzN3lpcTd1OGU4bG9sMnlmb2p0dmd3cHM2aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jeyi9i7rqYJUq7T0NR/giphy.gif",
             },
         },
     }
@@ -123,7 +134,7 @@ parser = argparse.ArgumentParser(
     prog="generate_template", description="Generates templates for in1000 assignments"
 )
 parser.add_argument(
-    "tasks_done", type=str, help="Comma separated oppg#, and q for quiz. Like q,0,1,6"
+    "tasks_done", type=str, help="Comma separated oppg#, and q for quiz. Like q,0,1,6."
 )
 parser.add_argument(
     "--oblig_nr",
@@ -180,7 +191,10 @@ if (
 oppgaver_text = ""
 for number, title in this_oblig["problems"].items():
     if number in tasks_done:
-        oppgaver_text += f"\n### **Oppgave {number}** - {title}\n\n+++\n"
+        if this_oblig["problemtype"] == "nummererte-oppgaver":
+            oppgaver_text += f"\n### **Oppgave {number}** - {title}\n\n+++\n"
+        elif this_oblig["problemtype"] == "implementer-filer":
+            oppgaver_text += f"\n### **{title}**\n\n+++\n"
 
 quiz_tekst = "### **Quiz** - "
 if quiz_done:
