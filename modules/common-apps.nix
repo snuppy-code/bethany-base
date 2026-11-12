@@ -23,11 +23,9 @@
       qbittorrent
       # godsvg
       firefox
+      tutanota-desktop
       vesktop
-      dissent
-      discordo
       gajim
-      element-desktop
       (signal-desktop.override {
         commandLineArgs = "--password-store=\"gnome-libsecret\"";
       })
