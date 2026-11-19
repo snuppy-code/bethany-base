@@ -278,6 +278,19 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1794537146,
+        "narHash": "sha256-bTKSclXJAmo9qdxPedTBHUGr8awPr4BrbOoOutJsYIc=",
+        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1119549.d5cc68339997/nixexprs.tar.zst?lastModified=1794537146&rev=d5cc6833999746cffdfe0598f7bc801a57b887a9"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1786599213,
         "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
         "owner": "NixOS",
@@ -390,14 +403,33 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvf": "nvf",
         "qml-crap": "qml-crap",
+        "sable": "sable",
         "slon": "slon",
         "sops-nix": "sops-nix",
         "stylix": "stylix"
       }
     },
-    "slon": {
+    "sable": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1795105613,
+        "narHash": "sha256-RAeZbutiwd0Yy9duVXtpddsZeRru51UnF2jIFwQybDQ=",
+        "ref": "refs/heads/main",
+        "rev": "42fe2142d17432f42cb595e98c52b0c7f6a8183e",
+        "revCount": 8503,
+        "type": "git",
+        "url": "https://git.sable.moe/SableClient/sable-next.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.sable.moe/SableClient/sable-next.git"
+      }
+    },
+    "slon": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1787405292,

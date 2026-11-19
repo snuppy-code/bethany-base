@@ -11,7 +11,6 @@
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
-    sable.url = "git+https://git.sable.moe/SableClient/sable-next.git";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
 
@@ -25,6 +24,8 @@
 
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     helium.inputs.nixpkgs.follows = "nixpkgs";
+
+    sable.url = "git+https://git.sable.moe/SableClient/sable-next.git";
 
     qml-crap.url = "github:snuppy-code/qml-crap";
     qml-crap.inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +42,7 @@
     stylix,
     slon,
     helium,
+    sable,
     qml-crap,
   } @ inputs: let
     nya = "x86_64-linux";
