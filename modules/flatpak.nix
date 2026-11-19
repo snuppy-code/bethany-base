@@ -9,7 +9,7 @@
   services.flatpak.packages = [
     "com.modrinth.ModrinthApp"
     "org.deskflow.deskflow"
-    "com.super_productivity.SuperProductivity"
+    "app.zen_browser.zen"
   ];
 
   services.flatpak.update.auto = {
