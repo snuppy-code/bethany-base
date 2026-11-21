@@ -8,6 +8,7 @@
     ./modules/os.nix
     ./modules/gpu.nix
     ./modules/cuda.nix
+    ./modules/common-apps.nix
     inputs.sops-nix.nixosModules.sops
     inputs.nvf.nixosModules.default
     inputs.stylix.nixosModules.stylix
