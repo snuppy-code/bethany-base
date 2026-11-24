@@ -65,7 +65,7 @@
           jdk25
         ];
       })
-      # lutris
+      lutris
       # bottles
 
       # gnome-boxes
