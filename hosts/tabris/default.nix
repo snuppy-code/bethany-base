@@ -6,6 +6,7 @@
   imports = [
     ./modules/hardware-configuration.nix
     ./modules/os.nix
+    ./modules/udev-rules.nix
     ./modules/gpu.nix
     ./modules/cuda.nix
     ./modules/common-apps.nix

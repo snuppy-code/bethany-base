@@ -7,7 +7,7 @@
 }: {
   environment.systemPackages = with pkgs;
     [
-        jstest-gtk
+      # jstest-gtk
     ]
     ++ [
       #inputs.helium.packages.${pkgs.system}.default
