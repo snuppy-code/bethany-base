@@ -8,6 +8,7 @@
     ./modules/os.nix
     ./modules/gpu.nix
     ./modules/throttle.nix
+    ./modules/remote_builds.nix
     inputs.sops-nix.nixosModules.sops
     inputs.nvf.nixosModules.default
     inputs.stylix.nixosModules.stylix
