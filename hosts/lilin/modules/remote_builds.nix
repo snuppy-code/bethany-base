@@ -5,7 +5,7 @@
     # Will be used to call "ssh builder" to connect to the builder machine.
     # The details of the connection (user, port, url etc.)
     # are taken from your "~/.ssh/config" file.
-    hostName = "tabris";
+    hostName = "tabris-build";
     system = "x86_64-linux";
     # Nix custom ssh-variant that avoids lots of "trusted-users" settings pain
     protocol = "ssh-ng";
