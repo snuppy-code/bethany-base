@@ -10,6 +10,7 @@
     ./modules/gpu.nix
     ./modules/cuda.nix
     ./modules/common-apps.nix
+    ./modules/builder-user.nix
     inputs.sops-nix.nixosModules.sops
     inputs.nvf.nixosModules.default
     inputs.stylix.nixosModules.stylix
