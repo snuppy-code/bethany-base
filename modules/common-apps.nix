@@ -9,7 +9,6 @@
     [
       lazygit
       packwiz
-      fresh-editor
 
       readest
       cozy
@@ -23,6 +22,7 @@
       qbittorrent
       # godsvg
       firefox
+      bitwarden-desktop
       tutanota-desktop
       vesktop
       gajim
