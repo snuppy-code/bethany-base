@@ -34,7 +34,7 @@
       normcap
       anki
       pdfpc
-            #libreoffice-still # should be gtk
+      #libreoffice-still # should be gtk
       obsidian
       solaar
       qalculate-qt
